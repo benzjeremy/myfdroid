@@ -18,7 +18,6 @@ jobs:
 
       - name: Install F-Droid Server Tools
         run: |
-          sudo apt-get update
           sudo apt-get install -y fdroidserver
 
       - name: Build and Sign F-Droid Index
