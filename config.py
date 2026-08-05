@@ -1,6 +1,6 @@
 repo_url = "https://benzjeremy.github.io/myfdroid/repo"
-repo_name = "Automated Custom F-Droid Repo"
-repo_description = "Automatically built and deployed via GitHub Actions."
+repo_name = "MyFDroid Repository"
+repo_description = "F-Droid Repository for P2P Secure Messenger and Apps."
 keystore = "keystore.p12"
 repo_keyalias = "fdroid"
 keyalias = "fdroid"
