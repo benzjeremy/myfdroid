@@ -25,7 +25,6 @@ jobs:
           FDROID_KEYSTORE_PASSWORD: ${{ secrets.FDROID_KEYSTORE_PASSWORD }}
         run: |
           chmod 600 config.py
-          fdroid update --create-key
           fdroid update --create-metadata
 
       - name: Deploy to GitHub Pages Branch
