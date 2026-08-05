@@ -1,62 +1,16 @@
 {
   "METADATA_VERSION": 20002,
   "allow_disabled_algorithms": false,
-  "P2PSecureMessenger.apk": {
-    "hash": "5b4c9f5fa4e8eae1f2542c569ece484db17b79685f992038fdbba6dc5e455b32",
+  ".gitignore": {
+    "name": ".gitignore",
+    "apkName": ".gitignore",
+    "hash": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d",
     "hashType": "sha256",
-    "uses-permission": [
-      [
-        "android.permission.INTERNET",
-        null
-      ],
-      [
-        "android.permission.ACCESS_NETWORK_STATE",
-        null
-      ],
-      [
-        "android.permission.ACCESS_WIFI_STATE",
-        null
-      ],
-      [
-        "android.permission.BLUETOOTH",
-        null
-      ],
-      [
-        "android.permission.BLUETOOTH_ADMIN",
-        null
-      ],
-      [
-        "android.permission.BLUETOOTH_CONNECT",
-        null
-      ],
-      [
-        "android.permission.BLUETOOTH_SCAN",
-        null
-      ],
-      [
-        "android.permission.ACCESS_FINE_LOCATION",
-        null
-      ],
-      [
-        "com.p2p.messenger.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
-        null
-      ]
-    ],
-    "uses-permission-sdk-23": [],
-    "features": [],
-    "icons_src": {},
-    "icons": {},
-    "antiFeatures": [],
-    "packageName": "com.p2p.messenger",
-    "versionCode": 1,
-    "name": "Aura P2P",
-    "versionName": "1.0.0",
-    "minSdkVersion": 26,
-    "targetSdkVersion": 34,
-    "sig": "85d8a7a8423cc33b32a6121def9a8992",
-    "signer": "0d74ef7f1b5155cd22689c19f2ec4711fbb635cc55d2da056c8c3b5a0cc62e32",
-    "size": 5994922,
-    "apkName": "P2PSecureMessenger.apk",
-    "added": 1785960500.388773
+    "ipfsCIDv1": null,
+    "versionCode": 0,
+    "versionName": "240a3e0",
+    "packageName": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d",
+    "size": 14,
+    "added": 1785961540.596146
   }
 }
