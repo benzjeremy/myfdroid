@@ -1,6 +1,6 @@
 repo_url = "https://benzjeremy.github.io/myfdroid/repo"
 repo_name = "Jeremy's Fdroid Repo"
-repo_description = "Welcome to my personal F-Droid repository! This repository hosts Android applications developed by Jeremy Benz, fully open-source and ready to be added to an F-Droid client."
+repo_description = "📦 Mein persönliches F-Droid Repository für alle meine Open-Source Android Apps. Serverless, Privacy-First, F-Droid Ready."
 keystore = "keystore.p12"
 repo_keyalias = "fdroid"
 keyalias = "fdroid"
