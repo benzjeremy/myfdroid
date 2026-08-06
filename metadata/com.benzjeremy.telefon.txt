@@ -1,0 +1,11 @@
+Name: Telefon App
+Summary: A clean Material 3 phone app
+Description:
+A Material 3 phone app developed by Jeremy Benz with dialer, call history, and legal screens.
+Categories: Phone
+License: MIT
+WebSite: https://github.com/benzjeremy/telefon
+SourceCode: https://github.com/benzjeremy/telefon
+IssueTracker: https://github.com/benzjeremy/telefon/issues
+AutoName: com.benzjeremy.telefon
+Categories: System
