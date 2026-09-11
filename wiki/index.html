@@ -72,13 +72,17 @@
         <section class="wiki-section">
           <h2>
             <span>📲</span>
-            <span class="lang-de">1. Repository-URL</span>
-            <span class="lang-en" style="display:none;">1. Repository URL</span>
+            <span class="lang-de">1. Repository-URL &amp; Fingerprint</span>
+            <span class="lang-en" style="display:none;">1. Repository URL &amp; Fingerprint</span>
           </h2>
-          <pre><code>https://benzjeremy.github.io/myfdroid/repo</code></pre>
+          <pre><code>https://benzjeremy.github.io/myfdroid/repo?fingerprint=A2AD027C856AE9E111B17A55DF5303BB423DBF8D447DC981BDB0E21346963CB7</code></pre>
+          <div style="margin: 1rem 0; padding: 0.875rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <strong>SHA-256 Fingerprint:</strong><br>
+            <code style="word-break: break-all; color: var(--accent-blue);">A2:AD:02:7C:85:6A:E9:E1:11:B1:7A:55:DF:53:03:BB:42:3D:BF:8D:44:7D:C9:81:BD:B0:E2:13:46:96:3C:B7</code>
+          </div>
           <p>
-            <span class="lang-de">Diese Adresse enthält den Index v1 (`index-v1.json`) und alle signierten Paketmetadaten.</span>
-            <span class="lang-en" style="display:none;">This address hosts the Index v1 (`index-v1.json`) and all signed package metadata.</span>
+            <span class="lang-de">Dieses Repository liefert alle kryptografisch signierten JAR-Archive (<code>index-v1.jar</code>, <code>index.jar</code>, <code>entry.jar</code>) und JSON-Indexe (<code>index-v1.json</code>) aus. Dadurch kann jeder Client das Repository ohne <code>NotFoundException</code> parsen.</span>
+            <span class="lang-en" style="display:none;">This repository delivers all cryptographically signed JAR archives (<code>index-v1.jar</code>, <code>index.jar</code>, <code>entry.jar</code>) and JSON manifests (<code>index-v1.json</code>), preventing <code>NotFoundException</code> across all clients.</span>
           </p>
         </section>
 

@@ -1,0 +1,12 @@
+{
+  "timestamp": 1789164208731,
+  "version": 20000,
+  "maxAge": 14,
+  "index": {
+    "name": "/index-v1.json",
+    "sha256": "55afa166f838352858cf7ddb8084ad755557dcefbc3086cde4e17d07b509e239",
+    "size": 5457,
+    "numPackages": 1
+  },
+  "diffs": {}
+}

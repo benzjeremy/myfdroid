@@ -82,18 +82,27 @@
             <span class="lang-en" style="display:none;">📲 Add Repository URL to your F-Droid client:</span>
           </div>
           <div class="repo-url-bar">
-            <span class="repo-url-text" id="repoUrlText">https://benzjeremy.github.io/myfdroid/repo</span>
+            <span class="repo-url-text" id="repoUrlText">https://benzjeremy.github.io/myfdroid/repo?fingerprint=A2AD027C856AE9E111B17A55DF5303BB423DBF8D447DC981BDB0E21346963CB7</span>
             <button type="button" class="btn-copy" onclick="copyRepoUrl()">
               <span class="lang-de">📋 Kopieren</span>
               <span class="lang-en" style="display:none;">📋 Copy</span>
             </button>
           </div>
+          
+          <div style="margin-top: 1rem; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: left; font-size: 0.8125rem;">
+            <span style="color: var(--text-muted); font-weight: 600;">SHA-256 Fingerprint:</span><br>
+            <code style="word-break: break-all; color: var(--accent-blue);">A2:AD:02:7C:85:6A:E9:E1:11:B1:7A:55:DF:53:03:BB:42:3D:BF:8D:44:7D:C9:81:BD:B0:E2:13:46:96:3C:B7</code>
+          </div>
+
           <div class="repo-actions-row">
-            <a href="fdroidrepos://benzjeremy.github.io/myfdroid/repo" class="btn-fdroid">
-              <span>🚀 In F-Droid / Droid-ify öffnen</span>
+            <a href="fdroidrepos://benzjeremy.github.io/myfdroid/repo?fingerprint=A2AD027C856AE9E111B17A55DF5303BB423DBF8D447DC981BDB0E21346963CB7" class="btn-fdroid">
+              <span>🚀 1-Click in F-Droid öffnen</span>
             </a>
-            <a href="repo/index-v1.json" target="_blank" rel="noopener noreferrer" class="btn-fdroid">
-              <span>📄 index-v1.json</span>
+            <a href="repo/index-v1.jar" class="btn-fdroid">
+              <span>📦 index-v1.jar</span>
+            </a>
+            <a href="repo/index.jar" class="btn-fdroid">
+              <span>📦 index.jar</span>
             </a>
           </div>
         </div>
