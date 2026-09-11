@@ -1,0 +1,116 @@
+{
+  "repo": {
+    "name": {
+      "de-DE": "Jeremy Benz F-Droid Repository",
+      "en-US": "Jeremy Benz F-Droid Repository"
+    },
+    "description": {
+      "de-DE": "Offizielles F-Droid-Repository f\u00fcr freie, quelloffene und datenschutzfreundliche Android-Apps von Jeremy Benz.",
+      "en-US": "Official F-Droid repository for privacy-first, free and open-source Android applications by Jeremy Benz."
+    },
+    "icon": {
+      "en-US": {
+        "name": "/icons/icon.png",
+        "sha256": "a0e16191c68af427e50adc7c5b62c53c5d8e5938940ba5b4f5f8e28ede344a9f",
+        "size": 833305
+      }
+    },
+    "address": "https://benzjeremy.github.io/myfdroid/repo",
+    "mirrors": [
+      {
+        "isPrimary": true,
+        "url": "https://benzjeremy.github.io/myfdroid/repo"
+      },
+      {
+        "url": "https://benzjeremy.github.io/myfdroid"
+      }
+    ],
+    "timestamp": 1789164691472,
+    "antiFeatures": {},
+    "categories": {
+      "Education": {
+        "name": {
+          "de-DE": "Bildung",
+          "en-US": "Education"
+        }
+      },
+      "Development": {
+        "name": {
+          "de-DE": "Entwicklung",
+          "en-US": "Development"
+        }
+      }
+    }
+  },
+  "packages": {
+    "com.benzjeremy.learn": {
+      "metadata": {
+        "added": 1789164691472,
+        "lastUpdated": 1789164691472,
+        "categories": [
+          "Education",
+          "Development"
+        ],
+        "name": {
+          "de-DE": "learn",
+          "en-US": "learn"
+        },
+        "summary": {
+          "de-DE": "Datenschutzfreundliche Lern-App mit Compiler-Labor & 90-Min-Pr\u00fcfungen",
+          "en-US": "Privacy-first code learning app with compiler lab & 90-min exams"
+        },
+        "description": {
+          "de-DE": "Open-Source Lern-App nach Fachinformatiker-Standard. In-Browser-Compiler-Labor, 90-min\u00fctige Abschlusspr\u00fcfungen und modulare Curricula f\u00fcr Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS und PHP.",
+          "en-US": "Open-source vocational code learning application. In-browser compiler lab, 90-minute final exams, and modular curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS, and PHP."
+        },
+        "license": "GPL-3.0-or-later",
+        "webSite": "https://benzjeremy.github.io/learn/",
+        "sourceCode": "https://github.com/benzjeremy/learn",
+        "issueTracker": "https://github.com/benzjeremy/learn/issues",
+        "authorName": "Jeremy Benz",
+        "authorEmail": "benzjeremy@pm.me",
+        "authorWebSite": "https://benzjeremy.github.io/",
+        "icon": {
+          "en-US": {
+            "name": "/icons/icon.png",
+            "sha256": "a0e16191c68af427e50adc7c5b62c53c5d8e5938940ba5b4f5f8e28ede344a9f",
+            "size": 833305
+          }
+        },
+        "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+      },
+      "versions": {
+        "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
+          "added": 1789164691472,
+          "file": {
+            "name": "/learn-v1.0.apk",
+            "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
+            "size": 1671824
+          },
+          "manifest": {
+            "versionName": "1.0",
+            "versionCode": 100,
+            "usesSdk": {
+              "minSdkVersion": 21,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Offizielles Release v1.0 mit Go, Cybersecurity, SQL, Web und 90-Minuten-Pr\u00fcfungen.",
+            "en-US": "Official Release v1.0 featuring Go, Cybersecurity, SQL, Web and 90-minute final exams."
+          }
+        }
+      }
+    }
+  }
+}
