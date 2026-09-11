@@ -29,7 +29,7 @@ Visit the official repository landing page to scan the QR code directly with you
 
 | Application | Package ID | Current Version | Description |
 |---|---|---|---|
-| **learn** | `com.benzjeremy.learn` | `v1.0` | Open-source code learning app with compiler lab & 90-min final exams. |
+| **learn** | `com.benzjeremy.learn` | `v2.0` (Native UI) / `v1.0` (Legacy) | Privacy-first code learning app with 9 curricula, 90-min exam, code lab, and pure native Android UI. |
 
 ---
 
