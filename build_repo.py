@@ -15,38 +15,36 @@ KEYPASS = "myfdroid_secret_key_2026"
 
 ts = int(time.time() * 1000)
 
-os.makedirs("repo/icons", exist_ok=True)
-os.makedirs("icons", exist_ok=True)
-
-# Update JB repo cover icon and app icon
-if os.path.exists("/tmp/jb_icon.png"):
-    shutil.copy2("/tmp/jb_icon.png", "icon.png")
-    shutil.copy2("/tmp/jb_icon.png", "repo/icon.png")
-    shutil.copy2("/tmp/jb_icon.png", "icons/icon.png")
-    shutil.copy2("/tmp/jb_icon.png", "repo/icons/icon.png")
-if os.path.exists("/tmp/real_icon.png"):
-    shutil.copy2("/tmp/real_icon.png", "icons/com.benzjeremy.learn.png")
-    shutil.copy2("/tmp/real_icon.png", "repo/icons/com.benzjeremy.learn.png")
-
+# Repo Icon: JB Monogram Cover
 with open("repo/icon.png", "rb") as f:
-    icon_bytes = f.read()
-icon_sha256 = hashlib.sha256(icon_bytes).hexdigest()
-icon_size = len(icon_bytes)
+    repo_icon_bytes = f.read()
+repo_icon_sha256 = hashlib.sha256(repo_icon_bytes).hexdigest()
+repo_icon_size = len(repo_icon_bytes)
 
-# Copy APK if exists in /tmp/apk_build
-if os.path.exists("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk"):
-    shutil.copy2("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk", "repo/learn-v1.0.apk")
-    shutil.copy2("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk", "learn-v1.0.apk")
+# App Icon: Original Glowing Neon Book Icon
+with open("repo/icons/com.benzjeremy.learn.png", "rb") as f:
+    app_icon_bytes = f.read()
+app_icon_sha256 = hashlib.sha256(app_icon_bytes).hexdigest()
+app_icon_size = len(app_icon_bytes)
 
-apk_path = "repo/learn-v1.0.apk"
-with open(apk_path, "rb") as f:
-    apk_bytes = f.read()
-apk_sha256 = hashlib.sha256(apk_bytes).hexdigest()
-apk_size = len(apk_bytes)
+# Read APK v2.0 (Pure Native Android UI)
+with open("repo/learn-v2.0.apk", "rb") as f:
+    apk_v2_bytes = f.read()
+apk_v2_sha256 = hashlib.sha256(apk_v2_bytes).hexdigest()
+apk_v2_size = len(apk_v2_bytes)
 
-print(f"APK sha256: {apk_sha256}, size: {apk_size}")
+# Read APK v1.0 (WebView Container)
+with open("repo/learn-v1.0.apk", "rb") as f:
+    apk_v1_bytes = f.read()
+apk_v1_sha256 = hashlib.sha256(apk_v1_bytes).hexdigest()
+apk_v1_size = len(apk_v1_bytes)
 
-# 1. index-v2.json (F-Droid v2 Schema with LocalizedText maps)
+print(f"Repo Icon (JB): {repo_icon_size} bytes")
+print(f"App Icon (Learn): {app_icon_size} bytes")
+print(f"APK v2.0 (Native): sha256={apk_v2_sha256}, size={apk_v2_size}")
+print(f"APK v1.0 (WebView): sha256={apk_v1_sha256}, size={apk_v1_size}")
+
+# 1. index-v2.json (F-Droid v2 Schema with localized maps & multi-version support)
 index_v2_data = {
     "repo": {
         "name": {
@@ -60,8 +58,8 @@ index_v2_data = {
         "icon": {
             "en-US": {
                 "name": "/icons/icon.png",
-                "sha256": icon_sha256,
-                "size": icon_size
+                "sha256": repo_icon_sha256,
+                "size": repo_icon_size
             }
         },
         "address": "https://benzjeremy.github.io/myfdroid/repo",
@@ -105,12 +103,12 @@ index_v2_data = {
                     "en-US": "learn"
                 },
                 "summary": {
-                    "de-DE": "Datenschutzfreundliche Lern-App mit Compiler-Labor & 90-Min-Prüfungen",
-                    "en-US": "Privacy-first code learning app with compiler lab & 90-min exams"
+                    "de-DE": "Datenschutzfreundliche Lern-App nach Fachinformatiker-Standard",
+                    "en-US": "Privacy-first code learning app following vocational standards"
                 },
                 "description": {
-                    "de-DE": "Open-Source Lern-App nach Fachinformatiker-Standard. In-Browser-Compiler-Labor, 90-minütige Abschlussprüfungen und modulare Curricula für Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS und PHP.",
-                    "en-US": "Open-source vocational code learning application. In-browser compiler lab, 90-minute final exams, and modular curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS, and PHP."
+                    "de-DE": "Open-Source Lern-App nach Fachinformatiker-Standard. 100% native Android-UI (Zero WebView) ab v2.0. 9 modulare Curricula (Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS und PHP), 90-minütige Prüfungs-Simulation, interaktives Code-Labor und tägliche Erinnerungen.",
+                    "en-US": "Open-source vocational code learning application. 100% native Android UI (zero WebView) starting in v2.0. 9 modular curricula (Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS, and PHP), 90-minute timed exam simulation, interactive code lab, and daily reminders."
                 },
                 "license": "GPL-3.0-or-later",
                 "webSite": "https://benzjeremy.github.io/learn/",
@@ -121,20 +119,53 @@ index_v2_data = {
                 "authorWebSite": "https://benzjeremy.github.io/",
                 "icon": {
                     "en-US": {
-                        "name": "/icons/icon.png",
-                        "sha256": icon_sha256,
-                        "size": icon_size
+                        "name": "/icons/com.benzjeremy.learn.png",
+                        "sha256": app_icon_sha256,
+                        "size": app_icon_size
                     }
                 },
                 "preferredSigner": FINGERPRINT_HEX
             },
             "versions": {
-                apk_sha256: {
+                apk_v2_sha256: {
                     "added": ts,
                     "file": {
+                        "name": "/learn-v2.0.apk",
+                        "sha256": apk_v2_sha256,
+                        "size": apk_v2_size
+                    },
+                    "manifest": {
+                        "versionName": "2.0",
+                        "versionCode": 200,
+                        "usesSdk": {
+                            "minSdkVersion": 21,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.POST_NOTIFICATIONS"
+                            },
+                            {
+                                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v2.0: Vollständig native Android-UI (Zero WebView), 9 Curricula, 90-Min-Prüfung, Code-Labor und tägliche Erinnerung.",
+                        "en-US": "Release v2.0: Pure native Android UI (Zero WebView), 9 curricula, 90-minute exam simulation, code lab, and daily reminders."
+                    }
+                },
+                apk_v1_sha256: {
+                    "added": ts - 86400000,
+                    "file": {
                         "name": "/learn-v1.0.apk",
-                        "sha256": apk_sha256,
-                        "size": apk_size
+                        "sha256": apk_v1_sha256,
+                        "size": apk_v1_size
                     },
                     "manifest": {
                         "versionName": "1.0",
@@ -155,8 +186,8 @@ index_v2_data = {
                         ]
                     },
                     "whatsNew": {
-                        "de-DE": "Offizielles Release v1.0 mit Go, Cybersecurity, SQL, Web und 90-Minuten-Prüfungen.",
-                        "en-US": "Official Release v1.0 featuring Go, Cybersecurity, SQL, Web and 90-minute final exams."
+                        "de-DE": "Release v1.0: Erste Edition mit integriertem Web-Cockpit.",
+                        "en-US": "Release v1.0: Initial edition with integrated web cockpit."
                     }
                 }
             }
@@ -210,8 +241,8 @@ index_v1_data = {
         {
             "packageName": "com.benzjeremy.learn",
             "name": "learn",
-            "summary": "Privacy-first code learning app with compiler lab & 90-min final exams",
-            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 90-minute exams and in-browser compiler lab.",
+            "summary": "Privacy-first vocational code learning app (Native UI v2.0)",
+            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 90-minute exams, code lab, and native Android UI.",
             "license": "GPL-3.0-or-later",
             "webSite": "https://benzjeremy.github.io/learn/",
             "sourceCode": "https://github.com/benzjeremy/learn",
@@ -219,26 +250,40 @@ index_v1_data = {
             "authorName": "Jeremy Benz",
             "authorEmail": "benzjeremy@pm.me",
             "authorWebSite": "https://benzjeremy.github.io/",
+            "icon": "icons/com.benzjeremy.learn.png",
             "categories": [
                 "Education",
                 "Development"
             ],
             "antiFeatures": [],
-            "suggestedVersionCode": "100"
+            "suggestedVersionCode": "200"
         }
     ],
     "packages": {
         "com.benzjeremy.learn": [
             {
-                "versionName": "1.0",
-                "versionCode": 100,
-                "size": apk_size,
-                "apkName": "learn-v1.0.apk",
-                "hash": apk_sha256,
+                "versionName": "2.0",
+                "versionCode": 200,
+                "size": apk_v2_size,
+                "apkName": "learn-v2.0.apk",
+                "hash": apk_v2_sha256,
                 "hashType": "sha256",
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
                 "added": ts,
+                "sig": PUBKEY_HEX,
+                "signer": "jeremybenz"
+            },
+            {
+                "versionName": "1.0",
+                "versionCode": 100,
+                "size": apk_v1_size,
+                "apkName": "learn-v1.0.apk",
+                "hash": apk_v1_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 21,
+                "targetSdkVersion": 34,
+                "added": ts - 86400000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
             }
@@ -260,23 +305,33 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
     <added>2026-09-12</added>
     <lastupdated>2026-09-12</lastupdated>
     <name>learn</name>
-    <summary>Privacy-first code learning app with compiler lab &amp; 90-min final exams</summary>
-    <icon>icon.png</icon>
-    <desc>Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS and PHP featuring 90-minute exams and in-browser compiler lab.</desc>
+    <summary>Privacy-first vocational code learning app (Native UI v2.0)</summary>
+    <icon>icons/com.benzjeremy.learn.png</icon>
+    <desc>Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS and PHP featuring 90-minute exams, code lab, and pure native Android UI.</desc>
     <license>GPL-3.0-or-later</license>
     <category>Education,Development</category>
     <web>https://benzjeremy.github.io/learn/</web>
     <source>https://github.com/benzjeremy/learn</source>
     <tracker>https://github.com/benzjeremy/learn/issues</tracker>
-    <marketversion>1.0</marketversion>
-    <marketvercode>100</marketvercode>
+    <marketversion>2.0</marketversion>
+    <marketvercode>200</marketvercode>
+    <package>
+      <version>2.0</version>
+      <versioncode>200</versioncode>
+      <size>{apk_v2_size}</size>
+      <apkname>learn-v2.0.apk</apkname>
+      <srcname>learn-v2.0.tar.gz</srcname>
+      <hash type="sha256">{apk_v2_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
     <package>
       <version>1.0</version>
       <versioncode>100</versioncode>
-      <size>{apk_size}</size>
+      <size>{apk_v1_size}</size>
       <apkname>learn-v1.0.apk</apkname>
       <srcname>learn-v1.0.tar.gz</srcname>
-      <hash type="sha256">{apk_sha256}</hash>
+      <hash type="sha256">{apk_v1_sha256}</hash>
       <sig>{PUBKEY_HEX}</sig>
       <added>2026-09-12</added>
     </package>
@@ -322,10 +377,10 @@ for fn in [
     "index-v1.json", "index-v1.jar",
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
-    "learn-v1.0.apk"
+    "learn-v2.0.apk", "learn-v1.0.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)
         print(f"Copied {fn} to root")
 
-print("All F-Droid index files (v2, v1 & legacy) and APK built and signed successfully!")
+print("All F-Droid index files (v2, v1 & legacy) and both APKs (v2.0 Native & v1.0 WebView) built and signed successfully!")
