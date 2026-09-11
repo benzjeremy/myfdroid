@@ -18,12 +18,13 @@ ts = int(time.time() * 1000)
 os.makedirs("repo/icons", exist_ok=True)
 os.makedirs("icons", exist_ok=True)
 
-# Update icons to real PNG
+# Update JB repo cover icon and app icon
+if os.path.exists("/tmp/jb_icon.png"):
+    shutil.copy2("/tmp/jb_icon.png", "icon.png")
+    shutil.copy2("/tmp/jb_icon.png", "repo/icon.png")
+    shutil.copy2("/tmp/jb_icon.png", "icons/icon.png")
+    shutil.copy2("/tmp/jb_icon.png", "repo/icons/icon.png")
 if os.path.exists("/tmp/real_icon.png"):
-    shutil.copy2("/tmp/real_icon.png", "icon.png")
-    shutil.copy2("/tmp/real_icon.png", "repo/icon.png")
-    shutil.copy2("/tmp/real_icon.png", "icons/icon.png")
-    shutil.copy2("/tmp/real_icon.png", "repo/icons/icon.png")
     shutil.copy2("/tmp/real_icon.png", "icons/com.benzjeremy.learn.png")
     shutil.copy2("/tmp/real_icon.png", "repo/icons/com.benzjeremy.learn.png")
 
@@ -33,9 +34,9 @@ icon_sha256 = hashlib.sha256(icon_bytes).hexdigest()
 icon_size = len(icon_bytes)
 
 # Copy APK if exists in /tmp/apk_build
-if os.path.exists("/tmp/apk_build/learn-v1.0.apk"):
-    shutil.copy2("/tmp/apk_build/learn-v1.0.apk", "repo/learn-v1.0.apk")
-    shutil.copy2("/tmp/apk_build/learn-v1.0.apk", "learn-v1.0.apk")
+if os.path.exists("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk"):
+    shutil.copy2("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk", "repo/learn-v1.0.apk")
+    shutil.copy2("/home/benzj/Projekte/benzjeremy.github.io/learn/android/learn-v1.0.apk", "learn-v1.0.apk")
 
 apk_path = "repo/learn-v1.0.apk"
 with open(apk_path, "rb") as f:

@@ -11,8 +11,8 @@
     "icon": {
       "en-US": {
         "name": "/icons/icon.png",
-        "sha256": "a0e16191c68af427e50adc7c5b62c53c5d8e5938940ba5b4f5f8e28ede344a9f",
-        "size": 833305
+        "sha256": "7ef4258fa6ec200538466b2d35d4b229e71a2b37d217af5052784d7be5cd8d0d",
+        "size": 101968
       }
     },
     "address": "https://benzjeremy.github.io/myfdroid/repo",
@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789164691472,
+    "timestamp": 1789166150741,
     "antiFeatures": {},
     "categories": {
       "Education": {
@@ -45,8 +45,8 @@
   "packages": {
     "com.benzjeremy.learn": {
       "metadata": {
-        "added": 1789164691472,
-        "lastUpdated": 1789164691472,
+        "added": 1789166150741,
+        "lastUpdated": 1789166150741,
         "categories": [
           "Education",
           "Development"
@@ -73,19 +73,19 @@
         "icon": {
           "en-US": {
             "name": "/icons/icon.png",
-            "sha256": "a0e16191c68af427e50adc7c5b62c53c5d8e5938940ba5b4f5f8e28ede344a9f",
-            "size": 833305
+            "sha256": "7ef4258fa6ec200538466b2d35d4b229e71a2b37d217af5052784d7be5cd8d0d",
+            "size": 101968
           }
         },
         "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
       },
       "versions": {
-        "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
-          "added": 1789164691472,
+        "3fd8dcdfef23eacc4225194b5d2b4f22dda3ae51261d06c84caccd13e7c8f363": {
+          "added": 1789166150741,
           "file": {
             "name": "/learn-v1.0.apk",
-            "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
-            "size": 1671824
+            "sha256": "3fd8dcdfef23eacc4225194b5d2b4f22dda3ae51261d06c84caccd13e7c8f363",
+            "size": 894130
           },
           "manifest": {
             "versionName": "1.0",
