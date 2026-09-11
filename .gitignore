@@ -1,0 +1,7 @@
+# Temporary and build files
+tmp/
+build/
+*.keystore
+*.jks
+.DS_Store
+Thumbs.db
