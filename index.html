@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>myfdroid · Offizielles F-Droid Repository für Jeremy Benz Apps</title>
+  <meta name="description" content="Offizielles, datenschutzfreundliches F-Droid Repository für freie Android-Apps von Jeremy Benz (learn, Bildungs-Tools &amp; Utilities). 100% Open Source unter GPL-3.0.">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('site_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a href="https://benzjeremy.github.io/" class="eco-back" title="Zurück zum zentralen Portfolio">
+          <span>← benzjeremy.github.io</span>
+        </a>
+        <a href="index.html" class="brand-title">
+          <span>📱 myfdroid</span>
+          <span class="brand-badge">Official Repo</span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Sprachauswahl">
+          <button type="button" class="lang-btn active" id="btn-lang-de" onclick="setLang('de')">DE</button>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container">
+        
+        <div class="hero-badges">
+          <span class="hero-badge badge-blue">📱 F-Droid &amp; Droid-ify Ready</span>
+          <span class="hero-badge">🔒 Zero-Telemetry &amp; DSGVO</span>
+          <a href="https://github.com/benzjeremy/myfdroid/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hero-badge">GNU GPL-3.0</a>
+        </div>
+
+        <div class="lang-de">
+          <h1 class="hero-title">
+            Das offizielle F-Droid Repository für <span class="gradient-text">freie Android-Apps</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Installiere und aktualisiere quelloffene Android-Apps von Jeremy Benz sicher, werbefrei und ohne Google-Play-Store-Zwang. Vollständige Paket-Integrität und reproduzierbare Builds.
+          </p>
+        </div>
+
+        <div class="lang-en" style="display:none;">
+          <h1 class="hero-title">
+            The Official F-Droid Repository for <span class="gradient-text">Free Android Apps</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Install and update open-source Android apps by Jeremy Benz safely, ad-free, and independent of Google Play. Full cryptographic integrity and reproducible builds.
+          </p>
+        </div>
+
+        <!-- REPO URL BOX -->
+        <div class="repo-box-container">
+          <div class="repo-box-title">
+            <span class="lang-de">📲 Repository-URL in deinen F-Droid Client einfügen:</span>
+            <span class="lang-en" style="display:none;">📲 Add Repository URL to your F-Droid client:</span>
+          </div>
+          <div class="repo-url-bar">
+            <span class="repo-url-text" id="repoUrlText">https://benzjeremy.github.io/myfdroid/repo</span>
+            <button type="button" class="btn-copy" onclick="copyRepoUrl()">
+              <span class="lang-de">📋 Kopieren</span>
+              <span class="lang-en" style="display:none;">📋 Copy</span>
+            </button>
+          </div>
+          <div class="repo-actions-row">
+            <a href="fdroidrepos://benzjeremy.github.io/myfdroid/repo" class="btn-fdroid">
+              <span>🚀 In F-Droid / Droid-ify öffnen</span>
+            </a>
+            <a href="repo/index-v1.json" target="_blank" rel="noopener noreferrer" class="btn-fdroid">
+              <span>📄 index-v1.json</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOSTED APPS SECTION -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        
+        <div class="section-header">
+          <p class="section-tag">
+            <span class="lang-de">Paket-Katalog</span>
+            <span class="lang-en" style="display:none;">Package Catalog</span>
+          </p>
+          <h2 class="section-title">
+            <span class="lang-de">Verfügbare Android-Apps</span>
+            <span class="lang-en" style="display:none;">Available Android Apps</span>
+          </h2>
+          <p class="section-desc">
+            <span class="lang-de">Alle Anwendungen sind 100% werbefrei, offline-fähig und unter der GNU GPL-3.0 lizenziert.</span>
+            <span class="lang-en" style="display:none;">All applications are 100% ad-free, offline-ready, and licensed under GNU GPL-3.0.</span>
+          </p>
+        </div>
+
+        <div class="apps-grid">
+          
+          <!-- App 1: learn -->
+          <article class="app-card">
+            <div>
+              <div class="app-card-header">
+                <div class="app-icon">📚</div>
+                <div class="app-title-group">
+                  <h3>learn</h3>
+                  <span class="app-pkg">com.benzjeremy.learn &bull; v1.0 [Major]</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                <span class="lang-de">Datenschutzfreundliche Open-Source Lern-App nach Fachinformatiker-Standard. 9 Kernfächer (Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS, PHP), interaktives Compiler-Labor und 90-Minuten-Abschlussprüfungen.</span>
+                <span class="lang-en" style="display:none;">Privacy-first open-source code learning app following vocational curricula. 9 core subjects (Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS, PHP), in-browser compiler lab, and 90-min final exams.</span>
+              </p>
+              <div class="app-tags">
+                <span class="app-tag">Go 1.22</span>
+                <span class="app-tag">Fyne v2</span>
+                <span class="app-tag">SQLite WAL</span>
+                <span class="app-tag">Offline-First</span>
+                <span class="app-tag">GPL-3.0</span>
+              </div>
+            </div>
+
+            <div class="app-actions">
+              <a href="https://github.com/benzjeremy/learn/releases/tag/v1.0" target="_blank" rel="noopener noreferrer" class="btn-card highlight">
+                <span>📦 APK Download</span>
+              </a>
+              <a href="https://benzjeremy.github.io/learn/" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <span>🌐 Website</span>
+              </a>
+              <a href="https://benzjeremy.github.io/learn/wiki/" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <span>📖 Wiki</span>
+              </a>
+              <a href="https://benzjeremy.github.io/learn/app/" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <span>🚀 Web-App</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INSTRUCTIONS SECTION -->
+    <section class="section-padding">
+      <div class="container">
+        
+        <div class="section-header">
+          <p class="section-tag">
+            <span class="lang-de">Schritt-für-Schritt</span>
+            <span class="lang-en" style="display:none;">Step-by-Step</span>
+          </p>
+          <h2 class="section-title">
+            <span class="lang-de">So bindest du das Repository ein</span>
+            <span class="lang-en" style="display:none;">How to Add the Repository</span>
+          </h2>
+          <p class="section-desc">
+            <span class="lang-de">Unterstützt alle freien Android-Paketmanager wie F-Droid, Droid-ify oder Neo Store.</span>
+            <span class="lang-en" style="display:none;">Supports all free Android package managers including F-Droid, Droid-ify, and Neo Store.</span>
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h4>
+              <span class="lang-de">Client öffnen &amp; Einstellungen</span>
+              <span class="lang-en" style="display:none;">Open Client &amp; Settings</span>
+            </h4>
+            <p>
+              <span class="lang-de">Öffne deine F-Droid oder Droid-ify App auf deinem Android-Gerät und navigiere zu <strong>Einstellungen &rarr; Paketquellen / Repositories</strong>.</span>
+              <span class="lang-en" style="display:none;">Open your F-Droid or Droid-ify app on your Android device and navigate to <strong>Settings &rarr; Repositories</strong>.</span>
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h4>
+              <span class="lang-de">Paketquelle hinzufügen</span>
+              <span class="lang-en" style="display:none;">Add Repository URL</span>
+            </h4>
+            <p>
+              <span class="lang-de">Tippe auf das <strong>Plus-Symbol (+)</strong> und füge die URL <code>https://benzjeremy.github.io/myfdroid/repo</code> ein oder nutze den 1-Click-Link oben.</span>
+              <span class="lang-en" style="display:none;">Tap the <strong>Plus (+) button</strong> and paste the URL <code>https://benzjeremy.github.io/myfdroid/repo</code> or use the 1-click link above.</span>
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h4>
+              <span class="lang-de">Aktualisieren &amp; Installieren</span>
+              <span class="lang-en" style="display:none;">Sync &amp; Install</span>
+            </h4>
+            <p>
+              <span class="lang-de">Paketquellen synchronisieren. Du kannst nun Apps wie <strong>learn</strong> direkt durchsuchen, installieren und automatische Updates empfangen.</span>
+              <span class="lang-en" style="display:none;">Synchronize your repositories. You can now search, install, and receive automatic updates for apps like <strong>learn</strong>.</span>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="about-grid">
+          
+          <div class="about-box">
+            <h3>
+              <span class="lang-de">Mitwirkende &amp; Ökosystem</span>
+              <span class="lang-en" style="display:none;">Contributors &amp; Ecosystem</span>
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: 1rem;">
+              <span class="lang-de">Bereitgestellt von Jeremy Benz als zentraler Android-Distributionskanal für alle freien Softwareprojekte.</span>
+              <span class="lang-en" style="display:none;">Maintained by Jeremy Benz as the central Android distribution channel for all open-source projects.</span>
+            </p>
+            <div>
+              <div class="author-chip">
+                <span class="author-avatar">JB</span>
+                <span>Jeremy Benz (@benzjeremy)</span>
+              </div>
+              <div class="author-chip">
+                <span class="author-avatar" style="background: var(--accent-violet);">AI</span>
+                <span>Google Antigravity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-box">
+            <h3>
+              <span class="lang-de">Freie &amp; Unabhängige Software</span>
+              <span class="lang-en" style="display:none;">Free &amp; Independent Software</span>
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
+              <span class="lang-de">Das gesamte Repository und alle Indexe stehen unter der <strong>GNU General Public License v3.0 (GPL-3.0)</strong>. Freie Software für freie Nutzer.</span>
+              <span class="lang-en" style="display:none;">The entire repository and indexing manifests are licensed under the <strong>GNU General Public License v3.0 (GPL-3.0)</strong>. Free software for free users.</span>
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="https://github.com/benzjeremy/myfdroid/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="btn-card" style="display:inline-flex;">
+                <span>📄 GNU GPL-3.0 Lizenztext</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>© 2026 Jeremy Benz &bull; myfdroid Repository</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/benzjeremy/myfdroid" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://benzjeremy.github.io/learn/" target="_blank" rel="noopener noreferrer">learn App</a>
+        <a href="https://benzjeremy.github.io/impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+        <a href="https://benzjeremy.github.io/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function setLang(lang) {
+      const isDe = lang === 'de';
+      document.querySelectorAll('.lang-de').forEach(el => el.style.display = isDe ? '' : 'none');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = isDe ? 'none' : '');
+      document.getElementById('btn-lang-de').classList.toggle('active', isDe);
+      document.getElementById('btn-lang-en').classList.toggle('active', !isDe);
+      localStorage.setItem('myfdroid_lang', lang);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('site_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+
+    function copyRepoUrl() {
+      const url = document.getElementById('repoUrlText').innerText;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Repository-URL in die Zwischenablage kopiert!\n\nhttps://benzjeremy.github.io/myfdroid/repo");
+      }).catch(() => {});
+    }
+
+    // Init Language & Theme from Storage
+    (function() {
+      const savedLang = localStorage.getItem('myfdroid_lang') || 'de';
+      setLang(savedLang);
+      const savedTheme = localStorage.getItem('site_theme') || 'dark';
+      document.getElementById('themeToggle').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>myfdroid Wiki &bull; F-Droid Repository Handbuch &amp; Setup</title>
+  <meta name="description" content="Offizielles Handbuch für das myfdroid Repository: Einrichtung in F-Droid, Droid-ify, Neo Store, Signaturschlüssel und Problembehebung.">
+  <link rel="stylesheet" href="wiki.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('site_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- WIKI HEADER -->
+  <header class="wiki-header">
+    <div class="wiki-header-container">
+      <div class="wiki-brand-group">
+        <a href="https://benzjeremy.github.io/" class="eco-back-link" title="Zurück zum Portfolio">
+          <span>← benzjeremy.github.io</span>
+        </a>
+        <a href="../" class="wiki-brand-link" title="Zurück zur Startseite">
+          <span class="wiki-brand-title">📱 myfdroid</span>
+          <span class="wiki-brand-badge">Wiki v1.0</span>
+        </a>
+      </div>
+
+      <div class="wiki-nav-tools">
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btn-lang-de" onclick="setWikiLang('de')">DE</button>
+          <button class="lang-btn" id="btn-lang-en" onclick="setWikiLang('en')">EN</button>
+        </div>
+
+        <button class="theme-toggle-btn" id="themeToggle" onclick="toggleWikiTheme()" title="Theme wechseln">🌙</button>
+
+        <a href="../" class="wiki-btn primary">
+          <span class="lang-de">🏠 Startseite</span>
+          <span class="lang-en" style="display:none;">🏠 Home</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WIKI LAYOUT -->
+  <div class="wiki-layout" style="grid-template-columns: 1fr; max-width: 900px;">
+    <main class="wiki-content">
+      <article class="wiki-article">
+        
+        <div class="wiki-hero-header">
+          <p class="wiki-category-tag">F-Droid Repository Guide</p>
+          <h1 class="wiki-title">
+            <span class="lang-de">myfdroid Handbuch &amp; Setup</span>
+            <span class="lang-en" style="display:none;">myfdroid Manual &amp; Setup</span>
+          </h1>
+          <p class="wiki-lead">
+            <span class="lang-de">Schritt-für-Schritt-Anleitung zur Einbindung des F-Droid Repositories in freie Android-Paketmanager wie F-Droid, Droid-ify und Neo Store.</span>
+            <span class="lang-en" style="display:none;">Step-by-step instructions for adding the F-Droid repository to free Android package managers such as F-Droid, Droid-ify, and Neo Store.</span>
+          </p>
+        </div>
+
+        <!-- 1. Einbindung -->
+        <section class="wiki-section">
+          <h2>
+            <span>📲</span>
+            <span class="lang-de">1. Repository-URL</span>
+            <span class="lang-en" style="display:none;">1. Repository URL</span>
+          </h2>
+          <pre><code>https://benzjeremy.github.io/myfdroid/repo</code></pre>
+          <p>
+            <span class="lang-de">Diese Adresse enthält den Index v1 (`index-v1.json`) und alle signierten Paketmetadaten.</span>
+            <span class="lang-en" style="display:none;">This address hosts the Index v1 (`index-v1.json`) and all signed package metadata.</span>
+          </p>
+        </section>
+
+        <!-- 2. Clients -->
+        <section class="wiki-section">
+          <h2>
+            <span>⚙️</span>
+            <span class="lang-de">2. Setup in verschiedenen Clients</span>
+            <span class="lang-en" style="display:none;">2. Setup across Clients</span>
+          </h2>
+          
+          <h3>F-Droid (Klassisch)</h3>
+          <ol>
+            <li>Öffne <strong>F-Droid</strong> &rarr; <strong>Einstellungen</strong> &rarr; <strong>Paketquellen</strong>.</li>
+            <li>Tippe oben rechts auf das <strong>+</strong> Symbol.</li>
+            <li>Füge die URL <code>https://benzjeremy.github.io/myfdroid/repo</code> ein und tippe auf <strong>Hinzufügen</strong>.</li>
+            <li>Ziehe auf der Startseite nach unten, um die Paketlisten zu aktualisieren.</li>
+          </ol>
+
+          <h3>Droid-ify &amp; Neo Store (Modern Material You)</h3>
+          <ol>
+            <li>Öffne <strong>Droid-ify</strong> oder <strong>Neo Store</strong> &rarr; <strong>Paketquellen / Repositories</strong>.</li>
+            <li>Tippe auf <strong>Neues Repository hinzufügen</strong> (+).</li>
+            <li>Füge die URL ein. Der Client liest Namen und Fingerprint automatisch aus.</li>
+          </ol>
+        </section>
+
+        <!-- 3. Sicherheit & Lizenz -->
+        <section class="wiki-section">
+          <h2>
+            <span>🛡️</span>
+            <span class="lang-de">3. Sicherheit &amp; Zero-Telemetry</span>
+            <span class="lang-en" style="display:none;">3. Security &amp; Zero-Telemetry</span>
+          </h2>
+          <p>
+            <span class="lang-de">Alle über dieses Repository ausgelieferten Anwendungen (wie z. B. <strong>learn</strong>) unterliegen folgenden Garantien:</span>
+            <span class="lang-en" style="display:none;">All applications distributed through this repository (such as <strong>learn</strong>) meet the following criteria:</span>
+          </p>
+          <ul>
+            <li><strong>Keine Tracker:</strong> Keine Werbe- oder Analyse-SDKs.</li>
+            <li><strong>Kein Play Services Zwang:</strong> 100% autark funktionsfähig auf De-Googled Geräten (GrapheneOS, CalyxOS, LineageOS).</li>
+            <li><strong>Freie Lizenz:</strong> Ausnahmslos GNU General Public License v3.0 (GPL-3.0).</li>
+          </ul>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="wiki-footer">
+          <div>© 2026 Jeremy Benz &bull; myfdroid</div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="../">Startseite</a>
+            <a href="https://github.com/benzjeremy/myfdroid" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://benzjeremy.github.io/impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+            <a href="https://benzjeremy.github.io/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+          </div>
+        </footer>
+
+      </article>
+    </main>
+  </div>
+
+  <script>
+    function setWikiLang(lang) {
+      const isDe = lang === 'de';
+      document.querySelectorAll('.lang-de').forEach(el => el.style.display = isDe ? '' : 'none');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = isDe ? 'none' : '');
+      document.getElementById('btn-lang-de').classList.toggle('active', isDe);
+      document.getElementById('btn-lang-en').classList.toggle('active', !isDe);
+      localStorage.setItem('myfdroid_lang', lang);
+    }
+
+    function toggleWikiTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('site_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+
+    (function() {
+      const savedLang = localStorage.getItem('myfdroid_lang') || 'de';
+      setWikiLang(savedLang);
+      const savedTheme = localStorage.getItem('site_theme') || 'dark';
+      document.getElementById('themeToggle').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>

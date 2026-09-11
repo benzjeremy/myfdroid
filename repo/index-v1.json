@@ -1,0 +1,50 @@
+{
+  "repo": {
+    "name": "Jeremy Benz F-Droid Repository",
+    "description": "Official F-Droid repository for privacy-first, free and open-source Android applications by Jeremy Benz.",
+    "icon": "icon.png",
+    "address": "https://benzjeremy.github.io/myfdroid/repo",
+    "timestamp": 1789163000000,
+    "version": 20000,
+    "mirrors": [
+      "https://benzjeremy.github.io/myfdroid/repo"
+    ]
+  },
+  "apps": [
+    {
+      "packageName": "com.benzjeremy.learn",
+      "name": "learn",
+      "summary": "Privacy-first code learning app with compiler lab & 90-min final exams",
+      "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 90-minute exams and in-browser compiler lab.",
+      "license": "GPL-3.0-or-later",
+      "webSite": "https://benzjeremy.github.io/learn/",
+      "sourceCode": "https://github.com/benzjeremy/learn",
+      "issueTracker": "https://github.com/benzjeremy/learn/issues",
+      "authorName": "Jeremy Benz",
+      "authorEmail": "benzjeremy@pm.me",
+      "authorWebSite": "https://benzjeremy.github.io/",
+      "categories": [
+        "Education",
+        "Development"
+      ],
+      "antiFeatures": [],
+      "suggestedVersionCode": "100"
+    }
+  ],
+  "packages": {
+    "com.benzjeremy.learn": [
+      {
+        "versionName": "1.0",
+        "versionCode": 100,
+        "size": 18450000,
+        "apkName": "com.benzjeremy.learn_100.apk",
+        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hashType": "sha256",
+        "minSdkVersion": 21,
+        "targetSdkVersion": 34,
+        "added": 1789163000000,
+        "signer": "jeremybenz"
+      }
+    ]
+  }
+}
