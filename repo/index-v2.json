@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789225722556,
+    "timestamp": 1789240139642,
     "antiFeatures": {},
     "categories": {
       "Education": {
@@ -51,14 +51,20 @@
           "de-DE": "Dienstprogramme",
           "en-US": "Utility"
         }
+      },
+      "System": {
+        "name": {
+          "de-DE": "System",
+          "en-US": "System"
+        }
       }
     }
   },
   "packages": {
     "com.benzjeremy.learn": {
       "metadata": {
-        "added": 1789225722556,
-        "lastUpdated": 1789225722556,
+        "added": 1789240139642,
+        "lastUpdated": 1789240139642,
         "categories": [
           "Education",
           "Development"
@@ -93,7 +99,7 @@
       },
       "versions": {
         "54ce030dd268d5326047f990e5296f508be6e0388782d6d095e7164b02366c2b": {
-          "added": 1789225722556,
+          "added": 1789240139642,
           "file": {
             "name": "/learn-v2.2.apk",
             "sha256": "54ce030dd268d5326047f990e5296f508be6e0388782d6d095e7164b02366c2b",
@@ -129,7 +135,7 @@
           }
         },
         "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8": {
-          "added": 1789225722556,
+          "added": 1789240139642,
           "file": {
             "name": "/learn-v2.1.apk",
             "sha256": "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8",
@@ -165,7 +171,7 @@
           }
         },
         "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b": {
-          "added": 1789225722556,
+          "added": 1789240139642,
           "file": {
             "name": "/learn-v2.0.apk",
             "sha256": "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b",
@@ -198,7 +204,7 @@
           }
         },
         "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
-          "added": 1789139322556,
+          "added": 1789153739642,
           "file": {
             "name": "/learn-v1.0.apk",
             "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
@@ -231,8 +237,8 @@
     },
     "com.benzjeremy.wetter": {
       "metadata": {
-        "added": 1789225722556,
-        "lastUpdated": 1789225722556,
+        "added": 1789240139642,
+        "lastUpdated": 1789240139642,
         "categories": [
           "Weather",
           "Utility"
@@ -267,7 +273,7 @@
       },
       "versions": {
         "2cf6911319008a8ef02d99de7d57f72836494197c2ebb626b8aec100ae7a8c11": {
-          "added": 1789225722556,
+          "added": 1789240139642,
           "file": {
             "name": "/wetter-v1.2.apk",
             "sha256": "2cf6911319008a8ef02d99de7d57f72836494197c2ebb626b8aec100ae7a8c11",
@@ -303,7 +309,7 @@
           }
         },
         "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b": {
-          "added": 1789225722556,
+          "added": 1789240139642,
           "file": {
             "name": "/wetter-v1.1.apk",
             "sha256": "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b",
@@ -339,7 +345,7 @@
           }
         },
         "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2": {
-          "added": 1789139322556,
+          "added": 1789153739642,
           "file": {
             "name": "/wetter-v1.0.apk",
             "sha256": "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2",
@@ -369,6 +375,81 @@
           "whatsNew": {
             "de-DE": "Release v1.0: Erste Edition mit nativer Android-UI, 24h/7-Tage-Prognose, Solar-PV-Modell und Startbildschirm-Widget.",
             "en-US": "Release v1.0: Initial release with native Android UI, 24h/7-day forecast, solar PV modeling, and home screen widget."
+          }
+        }
+      }
+    },
+    "com.benzjeremy.benzstore": {
+      "metadata": {
+        "added": 1789240139642,
+        "lastUpdated": 1789240139642,
+        "categories": [
+          "System",
+          "Utility"
+        ],
+        "name": {
+          "de-DE": "BenzStore",
+          "en-US": "BenzStore"
+        },
+        "summary": {
+          "de-DE": "Einheitlicher AppStore f\u00fcr Android & PC mit Version-Picker und SHA-256 Integrit\u00e4t",
+          "en-US": "Unified AppStore for Android & PC with version picker and SHA-256 integrity"
+        },
+        "description": {
+          "de-DE": "Offizieller, moderner AppStore f\u00fcr freie Android- und PC-Software von Jeremy Benz. Feed-Synchronisation via GitHub Content-Branch, Versionsauswahl (Latest oder spezifische Versionen) und kryptografische SHA-256 Integrit\u00e4tspr\u00fcfung vor der Installation.",
+          "en-US": "Official, modern AppStore for free Android and PC software by Jeremy Benz. Feed synchronization via GitHub content branch, version picker (latest or specific versions), and cryptographic SHA-256 integrity checks prior to installation."
+        },
+        "license": "GPL-3.0-or-later",
+        "webSite": "https://benzjeremy.github.io/benzstore/",
+        "sourceCode": "https://github.com/benzjeremy/benzstore",
+        "issueTracker": "https://github.com/benzjeremy/benzstore/issues",
+        "authorName": "Jeremy Benz",
+        "authorEmail": "benzjeremy@pm.me",
+        "authorWebSite": "https://benzjeremy.github.io/",
+        "icon": {
+          "en-US": {
+            "name": "/icons/com.benzjeremy.benzstore.png",
+            "sha256": "75684bf7f3697acde2cb0f6265837a31fb35eaea8c917877f9cd8d8966341b25",
+            "size": 47670
+          }
+        },
+        "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+      },
+      "versions": {
+        "72deb92bff172ba7f0709e9b9e31e313a288ca70cff021e49dde0843193a6400": {
+          "added": 1789240139642,
+          "file": {
+            "name": "/benzstore-v1.0.apk",
+            "sha256": "72deb92bff172ba7f0709e9b9e31e313a288ca70cff021e49dde0843193a6400",
+            "size": 103232
+          },
+          "manifest": {
+            "versionName": "1.0",
+            "versionCode": 100,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.REQUEST_INSTALL_PACKAGES"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v1.0: Erste Edition des nativen Android AppStore Clients mit Feed-Synchronisation, Versionsauswahl und SHA-256 Integrit\u00e4tspr\u00fcfung.",
+            "en-US": "Release v1.0: Initial release of the native Android AppStore client featuring feed synchronization, version picker, and SHA-256 integrity checks."
           }
         }
       }

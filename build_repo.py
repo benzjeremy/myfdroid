@@ -33,6 +33,18 @@ with open("repo/icons/com.benzjeremy.wetter.png", "rb") as f:
 wetter_icon_sha256 = hashlib.sha256(wetter_icon_bytes).hexdigest()
 wetter_icon_size = len(wetter_icon_bytes)
 
+# App Icon: BenzStore
+with open("repo/icons/com.benzjeremy.benzstore.png", "rb") as f:
+    benzstore_icon_bytes = f.read()
+benzstore_icon_sha256 = hashlib.sha256(benzstore_icon_bytes).hexdigest()
+benzstore_icon_size = len(benzstore_icon_bytes)
+
+# Read APK BenzStore v1.0 (Unified AppStore for Android & PC)
+with open("repo/benzstore-v1.0.apk", "rb") as f:
+    benzstore_v10_apk_bytes = f.read()
+benzstore_v10_apk_sha256 = hashlib.sha256(benzstore_v10_apk_bytes).hexdigest()
+benzstore_v10_apk_size = len(benzstore_v10_apk_bytes)
+
 # Read APK Learn v2.2 (Native Legal Notice & Offline Compliance)
 with open("repo/learn-v2.2.apk", "rb") as f:
     apk_v22_bytes = f.read()
@@ -85,6 +97,7 @@ print(f"APK Learn v1.0 (WebView): sha256={apk_v1_sha256}, size={apk_v1_size}")
 print(f"APK Wetter v1.2 (Native Legal & Offline): sha256={wetter_v12_apk_sha256}, size={wetter_v12_apk_size}")
 print(f"APK Wetter v1.1 (Native): sha256={wetter_v11_apk_sha256}, size={wetter_v11_apk_size}")
 print(f"APK Wetter v1.0 (Native): sha256={wetter_v10_apk_sha256}, size={wetter_v10_apk_size}")
+print(f"APK BenzStore v1.0 (Native): sha256={benzstore_v10_apk_sha256}, size={benzstore_v10_apk_size}")
 
 # 1. index-v2.json (F-Droid v2 Schema with localized maps & multi-version support)
 index_v2_data = {
@@ -139,6 +152,12 @@ index_v2_data = {
                 "name": {
                     "de-DE": "Dienstprogramme",
                     "en-US": "Utility"
+                }
+            },
+            "System": {
+                "name": {
+                    "de-DE": "System",
+                    "en-US": "System"
                 }
             }
         }
@@ -461,6 +480,81 @@ index_v2_data = {
                     }
                 }
             }
+        },
+        "com.benzjeremy.benzstore": {
+            "metadata": {
+                "added": ts,
+                "lastUpdated": ts,
+                "categories": [
+                    "System",
+                    "Utility"
+                ],
+                "name": {
+                    "de-DE": "BenzStore",
+                    "en-US": "BenzStore"
+                },
+                "summary": {
+                    "de-DE": "Einheitlicher AppStore für Android & PC mit Version-Picker und SHA-256 Integrität",
+                    "en-US": "Unified AppStore for Android & PC with version picker and SHA-256 integrity"
+                },
+                "description": {
+                    "de-DE": "Offizieller, moderner AppStore für freie Android- und PC-Software von Jeremy Benz. Feed-Synchronisation via GitHub Content-Branch, Versionsauswahl (Latest oder spezifische Versionen) und kryptografische SHA-256 Integritätsprüfung vor der Installation.",
+                    "en-US": "Official, modern AppStore for free Android and PC software by Jeremy Benz. Feed synchronization via GitHub content branch, version picker (latest or specific versions), and cryptographic SHA-256 integrity checks prior to installation."
+                },
+                "license": "GPL-3.0-or-later",
+                "webSite": "https://benzjeremy.github.io/benzstore/",
+                "sourceCode": "https://github.com/benzjeremy/benzstore",
+                "issueTracker": "https://github.com/benzjeremy/benzstore/issues",
+                "authorName": "Jeremy Benz",
+                "authorEmail": "benzjeremy@pm.me",
+                "authorWebSite": "https://benzjeremy.github.io/",
+                "icon": {
+                    "en-US": {
+                        "name": "/icons/com.benzjeremy.benzstore.png",
+                        "sha256": benzstore_icon_sha256,
+                        "size": benzstore_icon_size
+                    }
+                },
+                "preferredSigner": FINGERPRINT_HEX
+            },
+            "versions": {
+                benzstore_v10_apk_sha256: {
+                    "added": ts,
+                    "file": {
+                        "name": "/benzstore-v1.0.apk",
+                        "sha256": benzstore_v10_apk_sha256,
+                        "size": benzstore_v10_apk_size
+                    },
+                    "manifest": {
+                        "versionName": "1.0",
+                        "versionCode": 100,
+                        "usesSdk": {
+                            "minSdkVersion": 26,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.INTERNET"
+                            },
+                            {
+                                "name": "android.permission.REQUEST_INSTALL_PACKAGES"
+                            },
+                            {
+                                "name": "android.permission.POST_NOTIFICATIONS"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v1.0: Erste Edition des nativen Android AppStore Clients mit Feed-Synchronisation, Versionsauswahl und SHA-256 Integritätsprüfung.",
+                        "en-US": "Release v1.0: Initial release of the native Android AppStore client featuring feed synchronization, version picker, and SHA-256 integrity checks."
+                    }
+                }
+            }
         }
     }
 }
@@ -480,7 +574,7 @@ entry_data = {
         "name": "/index-v2.json",
         "sha256": v2_sha256,
         "size": v2_size,
-        "numPackages": 2
+        "numPackages": 3
     },
     "diffs": {}
 }
@@ -547,6 +641,26 @@ index_v1_data = {
             ],
             "antiFeatures": [],
             "suggestedVersionCode": "120"
+        },
+        {
+            "packageName": "com.benzjeremy.benzstore",
+            "name": "BenzStore",
+            "summary": "Einheitlicher AppStore für Android & PC mit Version-Picker (v1.0)",
+            "description": "Offizieller, moderner AppStore für freie Android- und PC-Software von Jeremy Benz. Feed-Synchronisation, Versionsauswahl und SHA-256 Integritätsprüfung.",
+            "license": "GPL-3.0-or-later",
+            "webSite": "https://benzjeremy.github.io/benzstore/",
+            "sourceCode": "https://github.com/benzjeremy/benzstore",
+            "issueTracker": "https://github.com/benzjeremy/benzstore/issues",
+            "authorName": "Jeremy Benz",
+            "authorEmail": "benzjeremy@pm.me",
+            "authorWebSite": "https://benzjeremy.github.io/",
+            "icon": "icons/com.benzjeremy.benzstore.png",
+            "categories": [
+                "System",
+                "Utility"
+            ],
+            "antiFeatures": [],
+            "suggestedVersionCode": "100"
         }
     ],
     "packages": {
@@ -640,6 +754,20 @@ index_v1_data = {
                 "added": ts - 86400000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
+            }
+        ],
+        "com.benzjeremy.benzstore": [
+            {
+                "versionName": "1.0",
+                "versionCode": 100,
+                "size": benzstore_v10_apk_size,
+                "apkName": "benzstore-v1.0.apk",
+                "hash": benzstore_v10_apk_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 26,
+                "targetSdkVersion": 34,
+                "signer": FINGERPRINT_HEX,
+                "added": ts
             }
         ]
     }
@@ -756,6 +884,32 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
       <added>2026-09-12</added>
     </package>
   </application>
+  <application id="com.benzjeremy.benzstore">
+    <id>com.benzjeremy.benzstore</id>
+    <added>2026-09-12</added>
+    <lastupdated>2026-09-12</lastupdated>
+    <name>BenzStore</name>
+    <summary>Einheitlicher AppStore für Android &amp; PC mit Version-Picker (v1.0)</summary>
+    <icon>icons/com.benzjeremy.benzstore.png</icon>
+    <desc>Offizieller, moderner AppStore für freie Android- und PC-Software von Jeremy Benz. Feed-Synchronisation, Versionsauswahl und SHA-256 Integritätsprüfung.</desc>
+    <license>GPL-3.0-or-later</license>
+    <category>System,Utility</category>
+    <web>https://benzjeremy.github.io/benzstore/</web>
+    <source>https://github.com/benzjeremy/benzstore</source>
+    <tracker>https://github.com/benzjeremy/benzstore/issues</tracker>
+    <marketversion>1.0</marketversion>
+    <marketvercode>100</marketvercode>
+    <package>
+      <version>1.0</version>
+      <versioncode>100</versioncode>
+      <size>{benzstore_v10_apk_size}</size>
+      <apkname>benzstore-v1.0.apk</apkname>
+      <srcname>benzstore-v1.0.tar.gz</srcname>
+      <hash type="sha256">{benzstore_v10_apk_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
+  </application>
 </fdroid>
 """
 with open("repo/index.xml", "w", encoding="utf-8") as f:
@@ -798,10 +952,17 @@ for fn in [
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
     "learn-v2.2.apk", "learn-v2.1.apk", "learn-v2.0.apk", "learn-v1.0.apk",
-    "wetter-v1.2.apk", "wetter-v1.1.apk", "wetter-v1.0.apk"
+    "wetter-v1.2.apk", "wetter-v1.1.apk", "wetter-v1.0.apk",
+    "benzstore-v1.0.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)
         print(f"Copied {fn} to root")
 
-print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2.2/v2.1/v2.0/v1.0 & Wetter v1.2/v1.1/v1.0) built and signed successfully!")
+if os.path.exists("repo/icons"):
+    os.makedirs("icons", exist_ok=True)
+    for ic in os.listdir("repo/icons"):
+        shutil.copy2(os.path.join("repo/icons", ic), os.path.join("icons", ic))
+    print("Mirrored repo/icons to root icons")
+
+print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2.2/v2.1/v2.0/v1.0, Wetter v1.2/v1.1/v1.0 & BenzStore v1.0) built and signed successfully!")
