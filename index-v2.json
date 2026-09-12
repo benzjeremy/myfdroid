@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789224095698,
+    "timestamp": 1789225722556,
     "antiFeatures": {},
     "categories": {
       "Education": {
@@ -57,8 +57,8 @@
   "packages": {
     "com.benzjeremy.learn": {
       "metadata": {
-        "added": 1789224095698,
-        "lastUpdated": 1789224095698,
+        "added": 1789225722556,
+        "lastUpdated": 1789225722556,
         "categories": [
           "Education",
           "Development"
@@ -92,8 +92,44 @@
         "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
       },
       "versions": {
+        "54ce030dd268d5326047f990e5296f508be6e0388782d6d095e7164b02366c2b": {
+          "added": 1789225722556,
+          "file": {
+            "name": "/learn-v2.2.apk",
+            "sha256": "54ce030dd268d5326047f990e5296f508be6e0388782d6d095e7164b02366c2b",
+            "size": 984242
+          },
+          "manifest": {
+            "versionName": "2.2",
+            "versionCode": 220,
+            "usesSdk": {
+              "minSdkVersion": 21,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v2.2: Nativer Offline-Rechtsschutz nach \u00a7 5 DDG (Impressum) und DSGVO/TDDDG mit garantierter Privatsph\u00e4re ohne Internet-Berechtigung.",
+            "en-US": "Release v2.2: Native offline legal compliance pursuant to \u00a7 5 DDG (Impressum) and GDPR/TDDDG with guaranteed offline privacy without internet permissions."
+          }
+        },
         "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8": {
-          "added": 1789224095698,
+          "added": 1789225722556,
           "file": {
             "name": "/learn-v2.1.apk",
             "sha256": "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8",
@@ -129,7 +165,7 @@
           }
         },
         "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b": {
-          "added": 1789224095698,
+          "added": 1789225722556,
           "file": {
             "name": "/learn-v2.0.apk",
             "sha256": "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b",
@@ -162,7 +198,7 @@
           }
         },
         "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
-          "added": 1789137695698,
+          "added": 1789139322556,
           "file": {
             "name": "/learn-v1.0.apk",
             "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
@@ -195,8 +231,8 @@
     },
     "com.benzjeremy.wetter": {
       "metadata": {
-        "added": 1789224095698,
-        "lastUpdated": 1789224095698,
+        "added": 1789225722556,
+        "lastUpdated": 1789225722556,
         "categories": [
           "Weather",
           "Utility"
@@ -230,8 +266,44 @@
         "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
       },
       "versions": {
+        "2cf6911319008a8ef02d99de7d57f72836494197c2ebb626b8aec100ae7a8c11": {
+          "added": 1789225722556,
+          "file": {
+            "name": "/wetter-v1.2.apk",
+            "sha256": "2cf6911319008a8ef02d99de7d57f72836494197c2ebb626b8aec100ae7a8c11",
+            "size": 87176
+          },
+          "manifest": {
+            "versionName": "1.2",
+            "versionCode": 120,
+            "usesSdk": {
+              "minSdkVersion": 21,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.ACCESS_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v1.2: Vollst\u00e4ndig nativer Offline-Rechtsschutz (\u00a7 5 DDG Impressum, DSGVO/TDDDG Datenschutzerkl\u00e4rung & GPL-3.0) direkt in der Anwendung einsehbar.",
+            "en-US": "Release v1.2: Fully native offline legal notice (\u00a7 5 DDG Impressum, GDPR/TDDDG Privacy Policy & GPL-3.0) directly embedded in the app."
+          }
+        },
         "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b": {
-          "added": 1789224095698,
+          "added": 1789225722556,
           "file": {
             "name": "/wetter-v1.1.apk",
             "sha256": "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b",
@@ -267,7 +339,7 @@
           }
         },
         "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2": {
-          "added": 1789137695698,
+          "added": 1789139322556,
           "file": {
             "name": "/wetter-v1.0.apk",
             "sha256": "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2",

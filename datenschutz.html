@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Datenschutzerklärung – myfdroid · Jeremy Benz</title>
+  <meta name="description" content="Datenschutzerklärung nach DSGVO und § 25 TDDDG für das freie myfdroid F-Droid Repository: 100% Tracking-frei, keine Werbe-Netzwerke, kein Logging.">
+  <link rel="icon" type="image/png" href="repo/icons/icon.png">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('site_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand-area">
+        <a href="index.html" class="brand-link">
+          <img src="repo/icons/icon.png" alt="myfdroid Logo" class="brand-logo" width="32" height="32" style="border-radius: 8px;">
+          <span class="brand-name">myfdroid</span>
+          <span class="brand-badge">Privacy</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html#apps">
+          <span class="lang-de">Apps</span>
+          <span class="lang-en" style="display:none;">Apps</span>
+        </a>
+        <a href="index.html#setup">
+          <span class="lang-de">Einrichtung</span>
+          <span class="lang-en" style="display:none;">Setup</span>
+        </a>
+        <a href="impressum.html">
+          <span class="lang-de">Impressum</span>
+          <span class="lang-en" style="display:none;">Legal Notice</span>
+        </a>
+        <a href="kontakt.html">
+          <span class="lang-de">Kontakt</span>
+          <span class="lang-en" style="display:none;">Contact</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Sprachauswahl">
+          <button type="button" class="lang-btn active" id="btn-lang-de" onclick="setLang('de')">DE</button>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button type="button" class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 3rem 0;">
+    <div class="container" style="max-width: 860px;">
+      
+      <div style="margin-bottom: 2rem;">
+        <span class="hero-badge" style="margin-bottom: 0.75rem;">
+          <span class="lang-de">Datenschutz &amp; Zero Tracking</span>
+          <span class="lang-en" style="display:none;">Data Privacy &amp; Zero Tracking</span>
+        </span>
+        <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">
+          <span class="lang-de">Datenschutzerklärung</span>
+          <span class="lang-en" style="display:none;">Privacy Policy</span>
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 1rem;">
+          <span class="lang-de">Transparente Information gemäß Art. 13 &amp; 14 DSGVO und § 25 TDDDG über die Erhebung und den Schutz personenbezogener Daten.</span>
+          <span class="lang-en" style="display:none;">Transparent disclosures pursuant to Arts. 13 &amp; 14 GDPR and § 25 TDDDG regarding data processing and protection.</span>
+        </p>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">1. Verantwortlicher (Art. 4 Nr. 7 DSGVO)</span>
+          <span class="lang-en" style="display:none;">1. Data Controller (Art. 4 (7) GDPR)</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p>Jeremy Benz (@benzjeremy)</p>
+          <p><span class="lang-de">Nordrhein-Westfalen (NRW), Deutschland</span><span class="lang-en" style="display:none;">North Rhine-Westphalia (NRW), Germany</span></p>
+          <p>E-Mail: <a href="mailto:benzjeremy@pm.me" style="color: var(--accent-blue);">benzjeremy@pm.me</a></p>
+          <p>Web: <a href="https://benzjeremy.github.io" style="color: var(--accent-blue);">https://benzjeremy.github.io</a></p>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">2. Grundsatz: 100% Tracking-Freiheit &amp; Keine Profilbildung</span>
+          <span class="lang-en" style="display:none;">2. Core Principle: 100% Free of Trackers &amp; Profiling</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">• <strong>Keine Cookies:</strong> Diese Website setzt keinerlei Marketing-, Tracking- oder Third-Party-Cookies ein.</p>
+          <p class="lang-en" style="display:none;">• <strong>No Cookies:</strong> This website places zero marketing, tracking, or third-party cookies.</p>
+          <p class="lang-de">• <strong>Keine externen Analytics:</strong> Kein Google Analytics, Matomo, Plausible, Firebase oder Sentry.</p>
+          <p class="lang-en" style="display:none;">• <strong>No External Analytics:</strong> Zero Google Analytics, Matomo, Plausible, Firebase, or Sentry tracking.</p>
+          <p class="lang-de">• <strong>Keine Werbenetzwerke:</strong> Keine Einbindung von Werbediensten oder Social-Media-Trackern.</p>
+          <p class="lang-en" style="display:none;">• <strong>No Ad Networks:</strong> No integration of advertisement networks or social media pixels.</p>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">3. Hosting via GitHub Pages</span>
+          <span class="lang-en" style="display:none;">3. Hosting via GitHub Pages</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Dieses Repository und die Showcase-Seite werden als statische Dateien über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) ausgeliefert. Beim Abruf von Dateien werden technisch notwendige Server-Logfiles (IP-Adresse, Zeitstempel, HTTP-Header) durch GitHub verarbeitet, um die Auslieferung zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Weitere Details finden sich in der Datenschutzerklärung von GitHub.</p>
+          <p class="lang-en" style="display:none;">This repository and static showcase are hosted via GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When files are requested, technical server logs (IP address, timestamp, HTTP headers) may be processed by GitHub to ensure service reliability. Legal basis is Art. 6 (1) (f) GDPR (legitimate interest in secure site delivery). Refer to GitHub's Privacy Statement for additional details.</p>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">4. Bereitgestellte Android-Applikationen</span>
+          <span class="lang-en" style="display:none;">4. Hosted Android Applications</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Alle in diesem Repository indexierten APK-Dateien (z. B. <em>learn</em> und <em>Wetter</em>) sind so konzipiert, dass sie die Privatsphäre der Nutzer maximal schützen:</p>
+          <p class="lang-en" style="display:none;">All APK packages indexed within this repository (e.g. <em>learn</em> and <em>Weather</em>) are engineered for maximum user privacy:</p>
+          <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+            <li><span class="lang-de"><strong>learn:</strong> Besitzt absichtlich KEINE Internet-Berechtigung (kein <code>android.permission.INTERNET</code>). Sie kann physisch keine Daten übertragen.</span><span class="lang-en" style="display:none;"><strong>learn:</strong> Deliberately omits internet permission (no <code>android.permission.INTERNET</code>). It physically cannot transmit telemetry.</span></li>
+            <li><span class="lang-de"><strong>Wetter:</strong> Kommuniziert ausschließlich direkt via verschlüsseltes HTTPS mit <code>api.open-meteo.com</code>. Keine Relay-Server, keine Werbe-IDs.</span><span class="lang-en" style="display:none;"><strong>Weather:</strong> Communicates solely via direct encrypted HTTPS with <code>api.open-meteo.com</code>. Zero relay servers, zero ad IDs.</span></li>
+            <li><span class="lang-de"><strong>In-App Pflichtangaben:</strong> Beide Anwendungen enthalten vollständige Impressums- und Datenschutzangaben direkt offline im Quellcode und Interface.</span><span class="lang-en" style="display:none;"><strong>In-App Compliance:</strong> Both apps feature comprehensive offline Impressum and Privacy disclosures directly inside their native interfaces.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">5. Rechte der betroffenen Person (Art. 15–21 DSGVO)</span>
+          <span class="lang-en" style="display:none;">5. Data Subject Rights (Arts. 15–21 GDPR)</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre verarbeiteten Daten (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17) sowie Einschränkung der Verarbeitung (Art. 18) und das Beschwerderecht bei der zuständigen Datenschutzaufsichtsbehörde (Art. 77 DSGVO). Zur Geltendmachung wenden Sie sich bitte formlos an <a href="mailto:benzjeremy@pm.me" style="color: var(--accent-blue);">benzjeremy@pm.me</a>.</p>
+          <p class="lang-en" style="display:none;">You have the continuous right to free information regarding processed personal data (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), and the right to lodge a complaint with a supervisory authority (Art. 77 GDPR). For inquiries, contact <a href="mailto:benzjeremy@pm.me" style="color: var(--accent-blue);">benzjeremy@pm.me</a>.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="index.html" class="btn-card highlight" style="display: inline-block;">
+          <span class="lang-de">← Zurück zum Repository</span>
+          <span class="lang-en" style="display:none;">← Back to Repository</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>© 2026 Jeremy Benz &bull; myfdroid Repository</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">myfdroid</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      const isDe = lang === 'de';
+      document.querySelectorAll('.lang-de').forEach(el => el.style.display = isDe ? '' : 'none');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = isDe ? 'none' : '');
+      document.getElementById('btn-lang-de').classList.toggle('active', isDe);
+      document.getElementById('btn-lang-en').classList.toggle('active', !isDe);
+      localStorage.setItem('myfdroid_lang', lang);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('site_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+
+    (function() {
+      const savedLang = localStorage.getItem('myfdroid_lang') || 'de';
+      setLang(savedLang);
+      const savedTheme = localStorage.getItem('site_theme') || 'dark';
+      document.getElementById('themeToggle').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>

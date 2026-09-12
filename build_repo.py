@@ -33,6 +33,12 @@ with open("repo/icons/com.benzjeremy.wetter.png", "rb") as f:
 wetter_icon_sha256 = hashlib.sha256(wetter_icon_bytes).hexdigest()
 wetter_icon_size = len(wetter_icon_bytes)
 
+# Read APK Learn v2.2 (Native Legal Notice & Offline Compliance)
+with open("repo/learn-v2.2.apk", "rb") as f:
+    apk_v22_bytes = f.read()
+apk_v22_sha256 = hashlib.sha256(apk_v22_bytes).hexdigest()
+apk_v22_size = len(apk_v22_bytes)
+
 # Read APK Learn v2.1 (Expanded Didactic Curricula - 45 Lessons)
 with open("repo/learn-v2.1.apk", "rb") as f:
     apk_v21_bytes = f.read()
@@ -51,6 +57,12 @@ with open("repo/learn-v1.0.apk", "rb") as f:
 apk_v1_sha256 = hashlib.sha256(apk_v1_bytes).hexdigest()
 apk_v1_size = len(apk_v1_bytes)
 
+# Read APK Wetter v1.2 (Native Legal Notice & Offline Compliance)
+with open("repo/wetter-v1.2.apk", "rb") as f:
+    wetter_v12_apk_bytes = f.read()
+wetter_v12_apk_sha256 = hashlib.sha256(wetter_v12_apk_bytes).hexdigest()
+wetter_v12_apk_size = len(wetter_v12_apk_bytes)
+
 # Read APK Wetter v1.1 (Auto-Refresh & Live Clock Widget)
 with open("repo/wetter-v1.1.apk", "rb") as f:
     wetter_v11_apk_bytes = f.read()
@@ -66,9 +78,11 @@ wetter_v10_apk_size = len(wetter_v10_apk_bytes)
 print(f"Repo Icon (JB): {repo_icon_size} bytes")
 print(f"App Icon (Learn): {app_icon_size} bytes")
 print(f"App Icon (Wetter): {wetter_icon_size} bytes")
+print(f"APK Learn v2.2 (Native Legal & Offline): sha256={apk_v22_sha256}, size={apk_v22_size}")
 print(f"APK Learn v2.1 (Native 45 Lessons): sha256={apk_v21_sha256}, size={apk_v21_size}")
 print(f"APK Learn v2.0 (Native): sha256={apk_v2_sha256}, size={apk_v2_size}")
 print(f"APK Learn v1.0 (WebView): sha256={apk_v1_sha256}, size={apk_v1_size}")
+print(f"APK Wetter v1.2 (Native Legal & Offline): sha256={wetter_v12_apk_sha256}, size={wetter_v12_apk_size}")
 print(f"APK Wetter v1.1 (Native): sha256={wetter_v11_apk_sha256}, size={wetter_v11_apk_size}")
 print(f"APK Wetter v1.0 (Native): sha256={wetter_v10_apk_sha256}, size={wetter_v10_apk_size}")
 
@@ -167,6 +181,42 @@ index_v2_data = {
                 "preferredSigner": FINGERPRINT_HEX
             },
             "versions": {
+                apk_v22_sha256: {
+                    "added": ts,
+                    "file": {
+                        "name": "/learn-v2.2.apk",
+                        "sha256": apk_v22_sha256,
+                        "size": apk_v22_size
+                    },
+                    "manifest": {
+                        "versionName": "2.2",
+                        "versionCode": 220,
+                        "usesSdk": {
+                            "minSdkVersion": 21,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.POST_NOTIFICATIONS"
+                            },
+                            {
+                                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+                            },
+                            {
+                                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v2.2: Nativer Offline-Rechtsschutz nach § 5 DDG (Impressum) und DSGVO/TDDDG mit garantierter Privatsphäre ohne Internet-Berechtigung.",
+                        "en-US": "Release v2.2: Native offline legal compliance pursuant to § 5 DDG (Impressum) and GDPR/TDDDG with guaranteed offline privacy without internet permissions."
+                    }
+                },
                 apk_v21_sha256: {
                     "added": ts,
                     "file": {
@@ -305,6 +355,42 @@ index_v2_data = {
                 "preferredSigner": FINGERPRINT_HEX
             },
             "versions": {
+                wetter_v12_apk_sha256: {
+                    "added": ts,
+                    "file": {
+                        "name": "/wetter-v1.2.apk",
+                        "sha256": wetter_v12_apk_sha256,
+                        "size": wetter_v12_apk_size
+                    },
+                    "manifest": {
+                        "versionName": "1.2",
+                        "versionCode": 120,
+                        "usesSdk": {
+                            "minSdkVersion": 21,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.INTERNET"
+                            },
+                            {
+                                "name": "android.permission.ACCESS_NETWORK_STATE"
+                            },
+                            {
+                                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v1.2: Vollständig nativer Offline-Rechtsschutz (§ 5 DDG Impressum, DSGVO/TDDDG Datenschutzerklärung & GPL-3.0) direkt in der Anwendung einsehbar.",
+                        "en-US": "Release v1.2: Fully native offline legal notice (§ 5 DDG Impressum, GDPR/TDDDG Privacy Policy & GPL-3.0) directly embedded in the app."
+                    }
+                },
                 wetter_v11_apk_sha256: {
                     "added": ts,
                     "file": {
@@ -425,8 +511,8 @@ index_v1_data = {
         {
             "packageName": "com.benzjeremy.learn",
             "name": "learn",
-            "summary": "Privacy-first vocational code learning app (Native UI v2.1 with 45 lessons)",
-            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 45 beginner lessons, 90-minute exams, code lab, and native Android UI.",
+            "summary": "Privacy-first vocational code learning app (Native UI v2.2 with legal compliance & 45 lessons)",
+            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 45 beginner lessons, 90-minute exams, code lab, native offline legal compliance, and native Android UI.",
             "license": "GPL-3.0-or-later",
             "webSite": "https://benzjeremy.github.io/learn/",
             "sourceCode": "https://github.com/benzjeremy/learn",
@@ -440,13 +526,13 @@ index_v1_data = {
                 "Development"
             ],
             "antiFeatures": [],
-            "suggestedVersionCode": "210"
+            "suggestedVersionCode": "220"
         },
         {
             "packageName": "com.benzjeremy.wetter",
             "name": "Wetter",
-            "summary": "Minimalistische Wetter-App & Solar-PV-Prognose mit Startbildschirm-Widget (v1.1)",
-            "description": "Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget und automatisches Aktualisierungsintervall.",
+            "summary": "Minimalistische Wetter-App & Solar-PV-Prognose mit Startbildschirm-Widget (v1.2)",
+            "description": "Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget, automatisches Aktualisierungsintervall und native Offline-Rechtshinweise (§ 5 DDG, DSGVO).",
             "license": "GPL-3.0-or-later",
             "webSite": "https://benzjeremy.github.io/wetter-site/",
             "sourceCode": "https://github.com/benzjeremy/wetter-site",
@@ -460,11 +546,23 @@ index_v1_data = {
                 "Utility"
             ],
             "antiFeatures": [],
-            "suggestedVersionCode": "110"
+            "suggestedVersionCode": "120"
         }
     ],
     "packages": {
         "com.benzjeremy.learn": [
+            {
+                "versionName": "2.2",
+                "versionCode": 220,
+                "size": apk_v22_size,
+                "apkName": "learn-v2.2.apk",
+                "hash": apk_v22_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 21,
+                "targetSdkVersion": 34,
+                "signer": FINGERPRINT_HEX,
+                "added": ts
+            },
             {
                 "versionName": "2.1",
                 "versionCode": 210,
@@ -475,7 +573,7 @@ index_v1_data = {
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
                 "signer": FINGERPRINT_HEX,
-                "added": ts
+                "added": ts - 3600000
             },
             {
                 "versionName": "2.0",
@@ -486,7 +584,7 @@ index_v1_data = {
                 "hashType": "sha256",
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
-                "added": ts,
+                "added": ts - 86400000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
             },
@@ -499,12 +597,24 @@ index_v1_data = {
                 "hashType": "sha256",
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
-                "added": ts - 86400000,
+                "added": ts - 172800000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
             }
         ],
         "com.benzjeremy.wetter": [
+            {
+                "versionName": "1.2",
+                "versionCode": 120,
+                "size": wetter_v12_apk_size,
+                "apkName": "wetter-v1.2.apk",
+                "hash": wetter_v12_apk_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 21,
+                "targetSdkVersion": 34,
+                "signer": FINGERPRINT_HEX,
+                "added": ts
+            },
             {
                 "versionName": "1.1",
                 "versionCode": 110,
@@ -514,7 +624,7 @@ index_v1_data = {
                 "hashType": "sha256",
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
-                "added": ts,
+                "added": ts - 3600000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
             },
@@ -549,16 +659,26 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
     <added>2026-09-12</added>
     <lastupdated>2026-09-12</lastupdated>
     <name>learn</name>
-    <summary>Privacy-first vocational code learning app (Native UI v2.0)</summary>
+    <summary>Privacy-first vocational code learning app (Native UI v2.2)</summary>
     <icon>icons/com.benzjeremy.learn.png</icon>
-    <desc>Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS and PHP featuring 90-minute exams, code lab, and pure native Android UI.</desc>
+    <desc>Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS and PHP featuring 90-minute exams, code lab, native offline legal compliance, and pure native Android UI.</desc>
     <license>GPL-3.0-or-later</license>
     <category>Education,Development</category>
     <web>https://benzjeremy.github.io/learn/</web>
     <source>https://github.com/benzjeremy/learn</source>
     <tracker>https://github.com/benzjeremy/learn/issues</tracker>
-    <marketversion>2.1</marketversion>
-    <marketvercode>210</marketvercode>
+    <marketversion>2.2</marketversion>
+    <marketvercode>220</marketvercode>
+    <package>
+      <version>2.2</version>
+      <versioncode>220</versioncode>
+      <size>{apk_v22_size}</size>
+      <apkname>learn-v2.2.apk</apkname>
+      <srcname>learn-v2.2.tar.gz</srcname>
+      <hash type="sha256">{apk_v22_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
     <package>
       <version>2.1</version>
       <versioncode>210</versioncode>
@@ -595,16 +715,26 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
     <added>2026-09-12</added>
     <lastupdated>2026-09-12</lastupdated>
     <name>Wetter</name>
-    <summary>Minimalistische Wetter-App &amp; Solar-PV-Prognose mit Startbildschirm-Widget</summary>
+    <summary>Minimalistische Wetter-App &amp; Solar-PV-Prognose mit Startbildschirm-Widget (v1.2)</summary>
     <icon>icons/com.benzjeremy.wetter.png</icon>
-    <desc>Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget und automatisches Aktualisierungsintervall.</desc>
+    <desc>Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget, automatisches Aktualisierungsintervall und native Offline-Rechtshinweise (§ 5 DDG, DSGVO).</desc>
     <license>GPL-3.0-or-later</license>
     <category>Weather,Utility</category>
     <web>https://benzjeremy.github.io/wetter-site/</web>
     <source>https://github.com/benzjeremy/wetter-site</source>
     <tracker>https://github.com/benzjeremy/wetter-site/issues</tracker>
-    <marketversion>1.1</marketversion>
-    <marketvercode>110</marketvercode>
+    <marketversion>1.2</marketversion>
+    <marketvercode>120</marketvercode>
+    <package>
+      <version>1.2</version>
+      <versioncode>120</versioncode>
+      <size>{wetter_v12_apk_size}</size>
+      <apkname>wetter-v1.2.apk</apkname>
+      <srcname>wetter-v1.2.tar.gz</srcname>
+      <hash type="sha256">{wetter_v12_apk_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
     <package>
       <version>1.1</version>
       <versioncode>110</versioncode>
@@ -667,11 +797,11 @@ for fn in [
     "index-v1.json", "index-v1.jar",
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
-    "learn-v2.1.apk", "learn-v2.0.apk", "learn-v1.0.apk",
-    "wetter-v1.1.apk", "wetter-v1.0.apk"
+    "learn-v2.2.apk", "learn-v2.1.apk", "learn-v2.0.apk", "learn-v1.0.apk",
+    "wetter-v1.2.apk", "wetter-v1.1.apk", "wetter-v1.0.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)
         print(f"Copied {fn} to root")
 
-print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2.1/v2.0/v1.0 & Wetter v1.1/v1.0) built and signed successfully!")
+print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2.2/v2.1/v2.0/v1.0 & Wetter v1.2/v1.1/v1.0) built and signed successfully!")

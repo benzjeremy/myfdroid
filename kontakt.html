@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Kontakt – myfdroid · Jeremy Benz</title>
+  <meta name="description" content="Kontaktmöglichkeiten und Sicherheitsmeldungen für das myfdroid F-Droid Repository und Open-Source-Projekte von Jeremy Benz.">
+  <link rel="icon" type="image/png" href="repo/icons/icon.png">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('site_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand-area">
+        <a href="index.html" class="brand-link">
+          <img src="repo/icons/icon.png" alt="myfdroid Logo" class="brand-logo" width="32" height="32" style="border-radius: 8px;">
+          <span class="brand-name">myfdroid</span>
+          <span class="brand-badge">Contact</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html#apps">
+          <span class="lang-de">Apps</span>
+          <span class="lang-en" style="display:none;">Apps</span>
+        </a>
+        <a href="index.html#setup">
+          <span class="lang-de">Einrichtung</span>
+          <span class="lang-en" style="display:none;">Setup</span>
+        </a>
+        <a href="impressum.html">
+          <span class="lang-de">Impressum</span>
+          <span class="lang-en" style="display:none;">Legal Notice</span>
+        </a>
+        <a href="datenschutz.html">
+          <span class="lang-de">Datenschutz</span>
+          <span class="lang-en" style="display:none;">Privacy</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Sprachauswahl">
+          <button type="button" class="lang-btn active" id="btn-lang-de" onclick="setLang('de')">DE</button>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button type="button" class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 3rem 0;">
+    <div class="container" style="max-width: 860px;">
+      
+      <div style="margin-bottom: 2rem;">
+        <span class="hero-badge" style="margin-bottom: 0.75rem;">
+          <span class="lang-de">Kommunikation &amp; Support</span>
+          <span class="lang-en" style="display:none;">Communication &amp; Support</span>
+        </span>
+        <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">
+          <span class="lang-de">Kontakt</span>
+          <span class="lang-en" style="display:none;">Contact</span>
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 1rem;">
+          <span class="lang-de">Direkte Kommunikationswege zu Jeremy Benz für Open-Source-Feedback, Fragen und Sicherheitsberichte.</span>
+          <span class="lang-en" style="display:none;">Direct communication channels to Jeremy Benz for open-source feedback, inquiries, and security reports.</span>
+        </p>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">📧 E-Mail-Kontakt</span>
+          <span class="lang-en" style="display:none;">📧 Email Communication</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Für allgemeine Fragen, Anregungen oder direkten Austausch:</p>
+          <p class="lang-en" style="display:none;">For general questions, suggestions, or direct discussions:</p>
+          <p style="margin-top: 0.5rem;">
+            <strong>E-Mail:</strong> <a href="mailto:benzjeremy@pm.me" style="color: var(--accent-blue); font-size: 1.1rem; font-weight: 600;">benzjeremy@pm.me</a>
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            <span class="lang-de">Ende-zu-Ende verschlüsselte Postfächer via Proton Mail werden nativ unterstützt.</span>
+            <span class="lang-en" style="display:none;">End-to-end encrypted communication via Proton Mail is natively supported.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">🛡️ Responsible Disclosure &amp; Sicherheitsmeldungen</span>
+          <span class="lang-en" style="display:none;">🛡️ Responsible Disclosure &amp; Vulnerability Reports</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Wenn Sie eine Sicherheitslücke oder Schwachstelle in einer unserer Android-Apps oder im Repository entdecken, bitten wir um eine vertrauliche Meldung direkt an <strong>benzjeremy@pm.me</strong> mit dem Betreff <code>[SECURITY]</code>.</p>
+          <p class="lang-en" style="display:none;">If you discover a security vulnerability in any of our Android applications or within this repository, please report it confidentially to <strong>benzjeremy@pm.me</strong> with the subject <code>[SECURITY]</code>.</p>
+          <p style="margin-top: 0.5rem;">
+            <span class="lang-de"><strong>Reaktionszeit-Garantie:</strong> Bestätigung des Eingangs und erste technische Einschätzung innerhalb von maximal <strong>48 Stunden</strong>.</span>
+            <span class="lang-en" style="display:none;"><strong>Response Guarantee:</strong> Receipt confirmation and initial technical evaluation within <strong>48 hours</strong> maximum.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-card" style="margin-bottom: 1.5rem; display: block;">
+        <h2 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.75rem;">
+          <span class="lang-de">🐙 GitHub Issue Tracker &amp; Diskussionsforen</span>
+          <span class="lang-en" style="display:none;">🐙 GitHub Issue Trackers &amp; Discussions</span>
+        </h2>
+        <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+          <p class="lang-de">Für öffentliche Fehlermeldungen, Feature-Wünsche und Pull Requests nutzen Sie bitte die jeweiligen GitHub-Repositories:</p>
+          <p class="lang-en" style="display:none;">For public issue tracking, feature suggestions, and pull requests, please use the respective GitHub repositories:</p>
+          <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+            <li>myfdroid: <a href="https://github.com/benzjeremy/myfdroid/issues" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">github.com/benzjeremy/myfdroid/issues</a></li>
+            <li>learn: <a href="https://github.com/benzjeremy/learn/issues" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">github.com/benzjeremy/learn/issues</a></li>
+            <li>wetter-site: <a href="https://github.com/benzjeremy/wetter-site/issues" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">github.com/benzjeremy/wetter-site/issues</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="index.html" class="btn-card highlight" style="display: inline-block;">
+          <span class="lang-de">← Zurück zum Repository</span>
+          <span class="lang-en" style="display:none;">← Back to Repository</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>© 2026 Jeremy Benz &bull; myfdroid Repository</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">myfdroid</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      const isDe = lang === 'de';
+      document.querySelectorAll('.lang-de').forEach(el => el.style.display = isDe ? '' : 'none');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = isDe ? 'none' : '');
+      document.getElementById('btn-lang-de').classList.toggle('active', isDe);
+      document.getElementById('btn-lang-en').classList.toggle('active', !isDe);
+      localStorage.setItem('myfdroid_lang', lang);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('site_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+
+    (function() {
+      const savedLang = localStorage.getItem('myfdroid_lang') || 'de';
+      setLang(savedLang);
+      const savedTheme = localStorage.getItem('site_theme') || 'dark';
+      document.getElementById('themeToggle').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>
