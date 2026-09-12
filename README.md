@@ -2,8 +2,14 @@
 
 [![F-Droid Compatible](https://img.shields.io/badge/F--Droid-Compatible-38bdf8.svg?logo=fdroid)](https://benzjeremy.github.io/myfdroid/)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
+[![Status: Pre-Release](https://img.shields.io/badge/Status-Pre--Release%20%2F%20WIP-orange.svg)](https://benzjeremy.github.io/myfdroid/)
 [![Apps: learn & wetter](https://img.shields.io/badge/Apps-learn%20%7C%20wetter-10b981.svg)](https://benzjeremy.github.io/myfdroid/#apps)
 [![Security: RSA-4096 / SHA-256](https://img.shields.io/badge/Signatures-RSA--4096%20%2F%20SHA--256-8b5cf6.svg)](https://benzjeremy.github.io/myfdroid/)
+
+> [!IMPORTANT]
+> ### 🚧 Pre-Release / Active Development Notice
+> **This repository infrastructure and indexed software applications are not yet finalized and remain under active development.**  
+> All APKs, repository indices, and packages are **Pre-Releases** (Work in Progress), even if released under major version tags.
 
 > The official cryptographically signed F-Droid repository for privacy-first, free and open-source Android applications developed by Jeremy Benz ([@benzjeremy](https://github.com/benzjeremy)).
 
