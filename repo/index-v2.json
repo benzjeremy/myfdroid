@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789243663496,
+    "timestamp": 1789243808079,
     "antiFeatures": {},
     "categories": {
       "System": {
@@ -45,8 +45,8 @@
   "packages": {
     "com.benzjeremy.benzstore": {
       "metadata": {
-        "added": 1789243663496,
-        "lastUpdated": 1789243663496,
+        "added": 1789243808079,
+        "lastUpdated": 1789243808079,
         "categories": [
           "System",
           "Utility"
@@ -80,12 +80,12 @@
         "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
       },
       "versions": {
-        "3b31feba81da4a155d2d9a5d2a49f453fb989b6e87dce444fe56a400017111c5": {
-          "added": 1789243663496,
+        "d01104b339745d7f97893853dfecaf470abe4527318689f370d32342314fe556": {
+          "added": 1789243808079,
           "file": {
             "name": "/benzstore-v1.0.apk",
-            "sha256": "3b31feba81da4a155d2d9a5d2a49f453fb989b6e87dce444fe56a400017111c5",
-            "size": 616636
+            "sha256": "d01104b339745d7f97893853dfecaf470abe4527318689f370d32342314fe556",
+            "size": 620732
           },
           "manifest": {
             "versionName": "1.0",
