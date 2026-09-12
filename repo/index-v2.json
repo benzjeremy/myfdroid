@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789166558936,
+    "timestamp": 1789204160725,
     "antiFeatures": {},
     "categories": {
       "Education": {
@@ -39,14 +39,26 @@
           "de-DE": "Entwicklung",
           "en-US": "Development"
         }
+      },
+      "Weather": {
+        "name": {
+          "de-DE": "Wetter",
+          "en-US": "Weather"
+        }
+      },
+      "Utility": {
+        "name": {
+          "de-DE": "Dienstprogramme",
+          "en-US": "Utility"
+        }
       }
     }
   },
   "packages": {
     "com.benzjeremy.learn": {
       "metadata": {
-        "added": 1789166558936,
-        "lastUpdated": 1789166558936,
+        "added": 1789204160725,
+        "lastUpdated": 1789204160725,
         "categories": [
           "Education",
           "Development"
@@ -81,7 +93,7 @@
       },
       "versions": {
         "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b": {
-          "added": 1789166558936,
+          "added": 1789204160725,
           "file": {
             "name": "/learn-v2.0.apk",
             "sha256": "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b",
@@ -114,7 +126,7 @@
           }
         },
         "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
-          "added": 1789080158936,
+          "added": 1789117760725,
           "file": {
             "name": "/learn-v1.0.apk",
             "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
@@ -141,6 +153,78 @@
           "whatsNew": {
             "de-DE": "Release v1.0: Erste Edition mit integriertem Web-Cockpit.",
             "en-US": "Release v1.0: Initial edition with integrated web cockpit."
+          }
+        }
+      }
+    },
+    "com.benzjeremy.wetter": {
+      "metadata": {
+        "added": 1789204160725,
+        "lastUpdated": 1789204160725,
+        "categories": [
+          "Weather",
+          "Utility"
+        ],
+        "name": {
+          "de-DE": "Wetter",
+          "en-US": "Weather"
+        },
+        "summary": {
+          "de-DE": "Minimalistische Wetter-App & Solar-PV-Prognose mit Startbildschirm-Widget",
+          "en-US": "Minimalist weather forecast and solar PV yield estimation with home screen widget"
+        },
+        "description": {
+          "de-DE": "Werbefreie Wetter- und Solar-PV-App f\u00fcr Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), weltweites Geocoding und Offline-Caching.",
+          "en-US": "Ad-free weather and solar PV forecast app for Android with an interactive home screen widget. Direct Open-Meteo API integration (zero relay server, zero API key), 24h and 7-day forecast, accurate solar PV yield estimation (5 kWp reference model), global geocoding, and offline caching."
+        },
+        "license": "GPL-3.0-or-later",
+        "webSite": "https://benzjeremy.github.io/wetter-site/",
+        "sourceCode": "https://github.com/benzjeremy/wetter-site",
+        "issueTracker": "https://github.com/benzjeremy/wetter-site/issues",
+        "authorName": "Jeremy Benz",
+        "authorEmail": "benzjeremy@pm.me",
+        "authorWebSite": "https://benzjeremy.github.io/",
+        "icon": {
+          "en-US": {
+            "name": "/icons/com.benzjeremy.wetter.png",
+            "sha256": "5740892ea8ef09080e3fb61afeea812792ab98e973756a2028367bd1577890cb",
+            "size": 39362
+          }
+        },
+        "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+      },
+      "versions": {
+        "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2": {
+          "added": 1789204160725,
+          "file": {
+            "name": "/wetter-v1.0.apk",
+            "sha256": "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2",
+            "size": 74811
+          },
+          "manifest": {
+            "versionName": "1.0",
+            "versionCode": 100,
+            "usesSdk": {
+              "minSdkVersion": 21,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.ACCESS_NETWORK_STATE"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v1.0: Erste Edition mit nativer Android-UI, 24h/7-Tage-Prognose, Solar-PV-Modell und Startbildschirm-Widget.",
+            "en-US": "Release v1.0: Initial release with native Android UI, 24h/7-day forecast, solar PV modeling, and home screen widget."
           }
         }
       }
