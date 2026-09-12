@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789223405119,
+    "timestamp": 1789224095698,
     "antiFeatures": {},
     "categories": {
       "Education": {
@@ -57,8 +57,8 @@
   "packages": {
     "com.benzjeremy.learn": {
       "metadata": {
-        "added": 1789223405119,
-        "lastUpdated": 1789223405119,
+        "added": 1789224095698,
+        "lastUpdated": 1789224095698,
         "categories": [
           "Education",
           "Development"
@@ -92,8 +92,44 @@
         "preferredSigner": "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
       },
       "versions": {
+        "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8": {
+          "added": 1789224095698,
+          "file": {
+            "name": "/learn-v2.1.apk",
+            "sha256": "48c0cc7b029265d23a591ece5dbe983c8278eb3315fc39321c4b961116350fb8",
+            "size": 980146
+          },
+          "manifest": {
+            "versionName": "2.1",
+            "versionCode": 210,
+            "usesSdk": {
+              "minSdkVersion": 21,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v2.1: 45 didaktische Einsteiger-Lektionen \u00fcber alle 9 Fachgebiete (Go, Security, SQL, Python, HTML/CSS, JS, C#, Astro, PHP) von Grund auf f\u00fcr Einsteiger ohne Vorkenntnisse.",
+            "en-US": "Release v2.1: 45 didactic beginner lessons across all 9 subjects (Go, Security, SQL, Python, HTML/CSS, JS, C#, Astro, PHP) designed from first principles."
+          }
+        },
         "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b": {
-          "added": 1789223405119,
+          "added": 1789224095698,
           "file": {
             "name": "/learn-v2.0.apk",
             "sha256": "036a6d4ac05eb5059f466774d4478451334f777c15305928aab5f69827ea5a8b",
@@ -126,7 +162,7 @@
           }
         },
         "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e": {
-          "added": 1789137005119,
+          "added": 1789137695698,
           "file": {
             "name": "/learn-v1.0.apk",
             "sha256": "a6b245ee8e9c0409489a707ac33833dcf4c7f5ecb64e565d6ca9996396a9c76e",
@@ -159,8 +195,8 @@
     },
     "com.benzjeremy.wetter": {
       "metadata": {
-        "added": 1789223405119,
-        "lastUpdated": 1789223405119,
+        "added": 1789224095698,
+        "lastUpdated": 1789224095698,
         "categories": [
           "Weather",
           "Utility"
@@ -195,7 +231,7 @@
       },
       "versions": {
         "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b": {
-          "added": 1789223405119,
+          "added": 1789224095698,
           "file": {
             "name": "/wetter-v1.1.apk",
             "sha256": "45e1b68ceb447f56f7f6199f9814dab5043b41a3ae4d76f72684f75f4dbb1d2b",
@@ -231,7 +267,7 @@
           }
         },
         "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2": {
-          "added": 1789137005119,
+          "added": 1789137695698,
           "file": {
             "name": "/wetter-v1.0.apk",
             "sha256": "9acbf08288a268e5232322ae4d5cc679d4056e6563a54335b468b14dca8e5fd2",

@@ -33,6 +33,12 @@ with open("repo/icons/com.benzjeremy.wetter.png", "rb") as f:
 wetter_icon_sha256 = hashlib.sha256(wetter_icon_bytes).hexdigest()
 wetter_icon_size = len(wetter_icon_bytes)
 
+# Read APK Learn v2.1 (Expanded Didactic Curricula - 45 Lessons)
+with open("repo/learn-v2.1.apk", "rb") as f:
+    apk_v21_bytes = f.read()
+apk_v21_sha256 = hashlib.sha256(apk_v21_bytes).hexdigest()
+apk_v21_size = len(apk_v21_bytes)
+
 # Read APK Learn v2.0 (Pure Native Android UI)
 with open("repo/learn-v2.0.apk", "rb") as f:
     apk_v2_bytes = f.read()
@@ -60,6 +66,7 @@ wetter_v10_apk_size = len(wetter_v10_apk_bytes)
 print(f"Repo Icon (JB): {repo_icon_size} bytes")
 print(f"App Icon (Learn): {app_icon_size} bytes")
 print(f"App Icon (Wetter): {wetter_icon_size} bytes")
+print(f"APK Learn v2.1 (Native 45 Lessons): sha256={apk_v21_sha256}, size={apk_v21_size}")
 print(f"APK Learn v2.0 (Native): sha256={apk_v2_sha256}, size={apk_v2_size}")
 print(f"APK Learn v1.0 (WebView): sha256={apk_v1_sha256}, size={apk_v1_size}")
 print(f"APK Wetter v1.1 (Native): sha256={wetter_v11_apk_sha256}, size={wetter_v11_apk_size}")
@@ -160,6 +167,42 @@ index_v2_data = {
                 "preferredSigner": FINGERPRINT_HEX
             },
             "versions": {
+                apk_v21_sha256: {
+                    "added": ts,
+                    "file": {
+                        "name": "/learn-v2.1.apk",
+                        "sha256": apk_v21_sha256,
+                        "size": apk_v21_size
+                    },
+                    "manifest": {
+                        "versionName": "2.1",
+                        "versionCode": 210,
+                        "usesSdk": {
+                            "minSdkVersion": 21,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.POST_NOTIFICATIONS"
+                            },
+                            {
+                                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+                            },
+                            {
+                                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v2.1: 45 didaktische Einsteiger-Lektionen über alle 9 Fachgebiete (Go, Security, SQL, Python, HTML/CSS, JS, C#, Astro, PHP) von Grund auf für Einsteiger ohne Vorkenntnisse.",
+                        "en-US": "Release v2.1: 45 didactic beginner lessons across all 9 subjects (Go, Security, SQL, Python, HTML/CSS, JS, C#, Astro, PHP) designed from first principles."
+                    }
+                },
                 apk_v2_sha256: {
                     "added": ts,
                     "file": {
@@ -382,8 +425,8 @@ index_v1_data = {
         {
             "packageName": "com.benzjeremy.learn",
             "name": "learn",
-            "summary": "Privacy-first vocational code learning app (Native UI v2.0)",
-            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 90-minute exams, code lab, and native Android UI.",
+            "summary": "Privacy-first vocational code learning app (Native UI v2.1 with 45 lessons)",
+            "description": "Open-source code learning application following vocational software engineering standards. In-depth curricula for Go, Cybersecurity, SQL, C#, Astro, Python, HTML/CSS, JS & PHP with 45 beginner lessons, 90-minute exams, code lab, and native Android UI.",
             "license": "GPL-3.0-or-later",
             "webSite": "https://benzjeremy.github.io/learn/",
             "sourceCode": "https://github.com/benzjeremy/learn",
@@ -397,7 +440,7 @@ index_v1_data = {
                 "Development"
             ],
             "antiFeatures": [],
-            "suggestedVersionCode": "200"
+            "suggestedVersionCode": "210"
         },
         {
             "packageName": "com.benzjeremy.wetter",
@@ -422,6 +465,18 @@ index_v1_data = {
     ],
     "packages": {
         "com.benzjeremy.learn": [
+            {
+                "versionName": "2.1",
+                "versionCode": 210,
+                "size": apk_v21_size,
+                "apkName": "learn-v2.1.apk",
+                "hash": apk_v21_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 21,
+                "targetSdkVersion": 34,
+                "signer": FINGERPRINT_HEX,
+                "added": ts
+            },
             {
                 "versionName": "2.0",
                 "versionCode": 200,
@@ -502,8 +557,18 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
     <web>https://benzjeremy.github.io/learn/</web>
     <source>https://github.com/benzjeremy/learn</source>
     <tracker>https://github.com/benzjeremy/learn/issues</tracker>
-    <marketversion>2.0</marketversion>
-    <marketvercode>200</marketvercode>
+    <marketversion>2.1</marketversion>
+    <marketvercode>210</marketvercode>
+    <package>
+      <version>2.1</version>
+      <versioncode>210</versioncode>
+      <size>{apk_v21_size}</size>
+      <apkname>learn-v2.1.apk</apkname>
+      <srcname>learn-v2.1.tar.gz</srcname>
+      <hash type="sha256">{apk_v21_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
     <package>
       <version>2.0</version>
       <versioncode>200</versioncode>
@@ -602,11 +667,11 @@ for fn in [
     "index-v1.json", "index-v1.jar",
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
-    "learn-v2.0.apk", "learn-v1.0.apk",
+    "learn-v2.1.apk", "learn-v2.0.apk", "learn-v1.0.apk",
     "wetter-v1.1.apk", "wetter-v1.0.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)
         print(f"Copied {fn} to root")
 
-print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2/v1 & Wetter v1.1/v1.0) built and signed successfully!")
+print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2.1/v2.0/v1.0 & Wetter v1.1/v1.0) built and signed successfully!")
