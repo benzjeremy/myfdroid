@@ -1,8 +1,14 @@
 # 📱 myfdroid
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Status: Pre-Release](https://img.shields.io/badge/Status-Pre--Release%20%2F%20WIP-orange.svg)](https://benzjeremy.github.io/myfdroid/)
 [![Website](https://img.shields.io/badge/Web-Repository%20Portal-brightgreen)](https://benzjeremy.github.io/myfdroid/)
 [![F-Droid Repo](https://img.shields.io/badge/F--Droid-Compatible-blue)](https://benzjeremy.github.io/myfdroid/repo)
+
+> [!IMPORTANT]
+> ### 🚧 Pre-Release / Active Development Notice
+> **This repository infrastructure and indexed software applications are not yet finalized and remain under active development.**  
+> All APKs, repository indices, and packages are **Pre-Releases** (Work in Progress), even if released under major version tags.
 
 > **Official F-Droid & Android Package Repository** for open-source applications maintained by Jeremy Benz.
 
