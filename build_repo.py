@@ -33,30 +33,37 @@ with open("repo/icons/com.benzjeremy.wetter.png", "rb") as f:
 wetter_icon_sha256 = hashlib.sha256(wetter_icon_bytes).hexdigest()
 wetter_icon_size = len(wetter_icon_bytes)
 
-# Read APK v2.0 (Pure Native Android UI)
+# Read APK Learn v2.0 (Pure Native Android UI)
 with open("repo/learn-v2.0.apk", "rb") as f:
     apk_v2_bytes = f.read()
 apk_v2_sha256 = hashlib.sha256(apk_v2_bytes).hexdigest()
 apk_v2_size = len(apk_v2_bytes)
 
-# Read APK v1.0 (WebView Container)
+# Read APK Learn v1.0 (WebView Container)
 with open("repo/learn-v1.0.apk", "rb") as f:
     apk_v1_bytes = f.read()
 apk_v1_sha256 = hashlib.sha256(apk_v1_bytes).hexdigest()
 apk_v1_size = len(apk_v1_bytes)
 
-# Read APK Wetter v1.0 (Native Android UI & Widget)
+# Read APK Wetter v1.1 (Auto-Refresh & Live Clock Widget)
+with open("repo/wetter-v1.1.apk", "rb") as f:
+    wetter_v11_apk_bytes = f.read()
+wetter_v11_apk_sha256 = hashlib.sha256(wetter_v11_apk_bytes).hexdigest()
+wetter_v11_apk_size = len(wetter_v11_apk_bytes)
+
+# Read APK Wetter v1.0 (Initial Edition)
 with open("repo/wetter-v1.0.apk", "rb") as f:
-    wetter_apk_bytes = f.read()
-wetter_apk_sha256 = hashlib.sha256(wetter_apk_bytes).hexdigest()
-wetter_apk_size = len(wetter_apk_bytes)
+    wetter_v10_apk_bytes = f.read()
+wetter_v10_apk_sha256 = hashlib.sha256(wetter_v10_apk_bytes).hexdigest()
+wetter_v10_apk_size = len(wetter_v10_apk_bytes)
 
 print(f"Repo Icon (JB): {repo_icon_size} bytes")
 print(f"App Icon (Learn): {app_icon_size} bytes")
 print(f"App Icon (Wetter): {wetter_icon_size} bytes")
 print(f"APK Learn v2.0 (Native): sha256={apk_v2_sha256}, size={apk_v2_size}")
 print(f"APK Learn v1.0 (WebView): sha256={apk_v1_sha256}, size={apk_v1_size}")
-print(f"APK Wetter v1.0 (Native): sha256={wetter_apk_sha256}, size={wetter_apk_size}")
+print(f"APK Wetter v1.1 (Native): sha256={wetter_v11_apk_sha256}, size={wetter_v11_apk_size}")
+print(f"APK Wetter v1.0 (Native): sha256={wetter_v10_apk_sha256}, size={wetter_v10_apk_size}")
 
 # 1. index-v2.json (F-Droid v2 Schema with localized maps & multi-version support)
 index_v2_data = {
@@ -255,12 +262,48 @@ index_v2_data = {
                 "preferredSigner": FINGERPRINT_HEX
             },
             "versions": {
-                wetter_apk_sha256: {
+                wetter_v11_apk_sha256: {
                     "added": ts,
                     "file": {
+                        "name": "/wetter-v1.1.apk",
+                        "sha256": wetter_v11_apk_sha256,
+                        "size": wetter_v11_apk_size
+                    },
+                    "manifest": {
+                        "versionName": "1.1",
+                        "versionCode": 110,
+                        "usesSdk": {
+                            "minSdkVersion": 21,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.INTERNET"
+                            },
+                            {
+                                "name": "android.permission.ACCESS_NETWORK_STATE"
+                            },
+                            {
+                                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v1.1: Live-Systemzeit im Startbildschirm-Widget (TextClock) und konfigurierbares automatisches Aktualisierungsintervall (15m, 30m, 1h, Aus).",
+                        "en-US": "Release v1.1: Live system clock in home screen widget (TextClock) and configurable auto-refresh interval (15m, 30m, 1h, Off)."
+                    }
+                },
+                wetter_v10_apk_sha256: {
+                    "added": ts - 86400000,
+                    "file": {
                         "name": "/wetter-v1.0.apk",
-                        "sha256": wetter_apk_sha256,
-                        "size": wetter_apk_size
+                        "sha256": wetter_v10_apk_sha256,
+                        "size": wetter_v10_apk_size
                     },
                     "manifest": {
                         "versionName": "1.0",
@@ -359,8 +402,8 @@ index_v1_data = {
         {
             "packageName": "com.benzjeremy.wetter",
             "name": "Wetter",
-            "summary": "Minimalistische Wetter-App & Solar-PV-Prognose mit Startbildschirm-Widget",
-            "description": "Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), weltweites Geocoding und Offline-Caching.",
+            "summary": "Minimalistische Wetter-App & Solar-PV-Prognose mit Startbildschirm-Widget (v1.1)",
+            "description": "Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget und automatisches Aktualisierungsintervall.",
             "license": "GPL-3.0-or-later",
             "webSite": "https://benzjeremy.github.io/wetter-site/",
             "sourceCode": "https://github.com/benzjeremy/wetter-site",
@@ -374,7 +417,7 @@ index_v1_data = {
                 "Utility"
             ],
             "antiFeatures": [],
-            "suggestedVersionCode": "100"
+            "suggestedVersionCode": "110"
         }
     ],
     "packages": {
@@ -408,15 +451,28 @@ index_v1_data = {
         ],
         "com.benzjeremy.wetter": [
             {
-                "versionName": "1.0",
-                "versionCode": 100,
-                "size": wetter_apk_size,
-                "apkName": "wetter-v1.0.apk",
-                "hash": wetter_apk_sha256,
+                "versionName": "1.1",
+                "versionCode": 110,
+                "size": wetter_v11_apk_size,
+                "apkName": "wetter-v1.1.apk",
+                "hash": wetter_v11_apk_sha256,
                 "hashType": "sha256",
                 "minSdkVersion": 21,
                 "targetSdkVersion": 34,
                 "added": ts,
+                "sig": PUBKEY_HEX,
+                "signer": "jeremybenz"
+            },
+            {
+                "versionName": "1.0",
+                "versionCode": 100,
+                "size": wetter_v10_apk_size,
+                "apkName": "wetter-v1.0.apk",
+                "hash": wetter_v10_apk_sha256,
+                "hashType": "sha256",
+                "minSdkVersion": 21,
+                "targetSdkVersion": 34,
+                "added": ts - 86400000,
                 "sig": PUBKEY_HEX,
                 "signer": "jeremybenz"
             }
@@ -476,21 +532,31 @@ xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
     <name>Wetter</name>
     <summary>Minimalistische Wetter-App &amp; Solar-PV-Prognose mit Startbildschirm-Widget</summary>
     <icon>icons/com.benzjeremy.wetter.png</icon>
-    <desc>Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), weltweites Geocoding und Offline-Caching.</desc>
+    <desc>Werbefreie Wetter- und Solar-PV-App für Android mit interaktivem Homescreen-Widget. Direkte Open-Meteo API-Anbindung (ohne Relay-Server, ohne API-Key), 24h- und 7-Tage-Vorhersage, genaue PV-Ertragsprognose (5 kWp Modell), Live-Uhr im Widget und automatisches Aktualisierungsintervall.</desc>
     <license>GPL-3.0-or-later</license>
     <category>Weather,Utility</category>
     <web>https://benzjeremy.github.io/wetter-site/</web>
     <source>https://github.com/benzjeremy/wetter-site</source>
     <tracker>https://github.com/benzjeremy/wetter-site/issues</tracker>
-    <marketversion>1.0</marketversion>
-    <marketvercode>100</marketvercode>
+    <marketversion>1.1</marketversion>
+    <marketvercode>110</marketvercode>
+    <package>
+      <version>1.1</version>
+      <versioncode>110</versioncode>
+      <size>{wetter_v11_apk_size}</size>
+      <apkname>wetter-v1.1.apk</apkname>
+      <srcname>wetter-v1.1.tar.gz</srcname>
+      <hash type="sha256">{wetter_v11_apk_sha256}</hash>
+      <sig>{PUBKEY_HEX}</sig>
+      <added>2026-09-12</added>
+    </package>
     <package>
       <version>1.0</version>
       <versioncode>100</versioncode>
-      <size>{wetter_apk_size}</size>
+      <size>{wetter_v10_apk_size}</size>
       <apkname>wetter-v1.0.apk</apkname>
       <srcname>wetter-v1.0.tar.gz</srcname>
-      <hash type="sha256">{wetter_apk_sha256}</hash>
+      <hash type="sha256">{wetter_v10_apk_sha256}</hash>
       <sig>{PUBKEY_HEX}</sig>
       <added>2026-09-12</added>
     </package>
@@ -537,10 +603,10 @@ for fn in [
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
     "learn-v2.0.apk", "learn-v1.0.apk",
-    "wetter-v1.0.apk"
+    "wetter-v1.1.apk", "wetter-v1.0.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)
         print(f"Copied {fn} to root")
 
-print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2/v1 & Wetter v1.0) built and signed successfully!")
+print("All F-Droid index files (v2, v1 & legacy) and all APKs (Learn v2/v1 & Wetter v1.1/v1.0) built and signed successfully!")
