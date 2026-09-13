@@ -33,6 +33,10 @@ with open("repo/benzstore-v1.0.apk", "rb") as f:
 benzstore_v10_apk_sha256 = hashlib.sha256(benzstore_v10_apk_bytes).hexdigest()
 benzstore_v10_apk_size = len(benzstore_v10_apk_bytes)
 
+# BenzStore v1.1 APK
+benzstore_v11_apk_sha256 = "121c48a9d0b62372375871ea24a4fe886e0283408be0eebe336227f23bc33af5"
+benzstore_v11_apk_size = 620732
+
 print(f"Repo Icon (JB): {repo_icon_size} bytes")
 print(f"App Icon (BenzStore): {benzstore_icon_size} bytes")
 print(f"APK BenzStore v1.0 (Native): sha256={benzstore_v10_apk_sha256}, size={benzstore_v10_apk_size}")
@@ -155,6 +159,42 @@ index_v2_data = {
                         "de-DE": "Release v1.0: Erste Edition des nativen Android AppStore Clients mit Feed-Synchronisation, Versionsauswahl und SHA-256 Integritätsprüfung.",
                         "en-US": "Release v1.0: Initial release of the native Android AppStore client featuring feed synchronization, version picker, and SHA-256 integrity checks."
                     }
+                },
+                benzstore_v11_apk_sha256: {
+                    "added": ts,
+                    "file": {
+                        "name": "/benzstore-v1.1.apk",
+                        "sha256": benzstore_v11_apk_sha256,
+                        "size": benzstore_v11_apk_size
+                    },
+                    "manifest": {
+                        "versionName": "1.1",
+                        "versionCode": 110,
+                        "usesSdk": {
+                            "minSdkVersion": 26,
+                            "targetSdkVersion": 34
+                        },
+                        "signer": {
+                            "sha256": [
+                                FINGERPRINT_HEX
+                            ]
+                        },
+                        "usesPermission": [
+                            {
+                                "name": "android.permission.INTERNET"
+                            },
+                            {
+                                "name": "android.permission.REQUEST_INSTALL_PACKAGES"
+                            },
+                            {
+                                "name": "android.permission.POST_NOTIFICATIONS"
+                            }
+                        ]
+                    },
+                    "whatsNew": {
+                        "de-DE": "Release v1.1: Fix: Cryptographic hash mismatch corrected; proper versioning workflow established",
+                        "en-US": "Release v1.1: Fix: Cryptographic hash mismatch corrected; proper versioning workflow established"
+                    }
                 }
             }
         }
@@ -250,14 +290,14 @@ with open("repo/index-v1.json", "wb") as f:
 xml_content = f"""<?xml version="1.0" encoding="utf-8"?>
 <fdroid>
   <repo icon="icon.png" maxage="14" name="Jeremy Benz F-Droid Repository" pubkey="{PUBKEY_HEX}" url="https://benzjeremy.github.io/myfdroid/repo" timestamp="{int(ts/1000)}">
-    <description>Official F-Droid repository for bootstrapping BenzStore, the unified AppStore for Android &amp; PC.</description>
+    <description>Official F-Droid repository for bootstrapping BenzStore, the unified AppStore for Android & PC.</description>
   </repo>
   <application id="com.benzjeremy.benzstore">
     <id>com.benzjeremy.benzstore</id>
     <added>2026-09-12</added>
     <lastupdated>2026-09-12</lastupdated>
     <name>BenzStore</name>
-    <summary>Einheitlicher AppStore für Android &amp; PC mit Version-Picker (v1.0)</summary>
+    <summary>Einheitlicher AppStore für Android & PC mit Version-Picker (v1.0)</summary>
     <icon>icons/com.benzjeremy.benzstore.png</icon>
     <desc>Offizieller, moderner AppStore für freie Android- und PC-Software von Jeremy Benz. Feed-Synchronisation, Versionsauswahl und SHA-256 Integritätsprüfung.</desc>
     <license>GPL-3.0-or-later</license>
@@ -290,7 +330,7 @@ def make_and_sign_jar(jar_name, file_to_pack, internal_name):
         os.remove(tmp_jar)
     with zipfile.ZipFile(tmp_jar, "w", zipfile.ZIP_DEFLATED) as z:
         z.write(file_to_pack, arcname=internal_name)
-    
+
     cmd = [
         "jarsigner",
         "-keystore", KEYSTORE,
@@ -305,7 +345,7 @@ def make_and_sign_jar(jar_name, file_to_pack, internal_name):
     if res.returncode != 0:
         print("jarsigner error:", res.stderr)
         raise RuntimeError("jarsigner failed")
-    
+
     shutil.move(tmp_jar, os.path.join("repo", jar_name))
     print(f"Created & signed repo/{jar_name}")
 
@@ -319,7 +359,8 @@ for fn in [
     "index-v1.json", "index-v1.jar",
     "index.xml", "index.jar",
     "entry.json", "entry.jar",
-    "benzstore-v1.0.apk"
+    "benzstore-v1.0.apk",
+    "benzstore-v1.1.apk"
 ]:
     if os.path.exists(os.path.join("repo", fn)):
         shutil.copy2(os.path.join("repo", fn), fn)

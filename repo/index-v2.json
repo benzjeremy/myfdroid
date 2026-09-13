@@ -25,7 +25,7 @@
         "url": "https://benzjeremy.github.io/myfdroid"
       }
     ],
-    "timestamp": 1789243808079,
+    "timestamp": 1789290437258,
     "antiFeatures": {},
     "categories": {
       "System": {
@@ -45,8 +45,8 @@
   "packages": {
     "com.benzjeremy.benzstore": {
       "metadata": {
-        "added": 1789243808079,
-        "lastUpdated": 1789243808079,
+        "added": 1789290437258,
+        "lastUpdated": 1789290437258,
         "categories": [
           "System",
           "Utility"
@@ -81,7 +81,7 @@
       },
       "versions": {
         "d01104b339745d7f97893853dfecaf470abe4527318689f370d32342314fe556": {
-          "added": 1789243808079,
+          "added": 1789290437258,
           "file": {
             "name": "/benzstore-v1.0.apk",
             "sha256": "d01104b339745d7f97893853dfecaf470abe4527318689f370d32342314fe556",
@@ -114,6 +114,42 @@
           "whatsNew": {
             "de-DE": "Release v1.0: Erste Edition des nativen Android AppStore Clients mit Feed-Synchronisation, Versionsauswahl und SHA-256 Integrit\u00e4tspr\u00fcfung.",
             "en-US": "Release v1.0: Initial release of the native Android AppStore client featuring feed synchronization, version picker, and SHA-256 integrity checks."
+          }
+        },
+        "121c48a9d0b62372375871ea24a4fe886e0283408be0eebe336227f23bc33af5": {
+          "added": 1789290437258,
+          "file": {
+            "name": "/benzstore-v1.1.apk",
+            "sha256": "121c48a9d0b62372375871ea24a4fe886e0283408be0eebe336227f23bc33af5",
+            "size": 620732
+          },
+          "manifest": {
+            "versionName": "1.1",
+            "versionCode": 110,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "a2ad027c856ae9e111b17a55df5303bb423dbf8d447dc981bdb0e21346963cb7"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.REQUEST_INSTALL_PACKAGES"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              }
+            ]
+          },
+          "whatsNew": {
+            "de-DE": "Release v1.1: Fix: Cryptographic hash mismatch corrected; proper versioning workflow established",
+            "en-US": "Release v1.1: Fix: Cryptographic hash mismatch corrected; proper versioning workflow established"
           }
         }
       }
